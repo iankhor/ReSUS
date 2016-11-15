@@ -1,0 +1,1 @@
+json.array! @medical_practitioner_profiles, partial: 'medical_practitioner_profiles/medical_practitioner_profile', as: :medical_practitioner_profile

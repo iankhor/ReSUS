@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medical Practitioner Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Registration number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medical_practitioner_profiles.each do |medical_practitioner_profile| %>
+      <tr>
+        <td><%= medical_practitioner_profile.first_name %></td>
+        <td><%= medical_practitioner_profile.last_name %></td>
+        <td><%= medical_practitioner_profile.registration_number %></td>
+        <td><%= link_to 'Show', medical_practitioner_profile %></td>
+        <td><%= link_to 'Edit', edit_medical_practitioner_profile_path(medical_practitioner_profile) %></td>
+        <td><%= link_to 'Destroy', medical_practitioner_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medical Practitioner Profile', new_medical_practitioner_profile_path %>

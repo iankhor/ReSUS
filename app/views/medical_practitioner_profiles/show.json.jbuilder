@@ -1,0 +1,1 @@
+json.partial! "medical_practitioner_profiles/medical_practitioner_profile", medical_practitioner_profile: @medical_practitioner_profile

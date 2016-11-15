@@ -1,0 +1,2 @@
+module MedicalPractitionerProfilesHelper
+end

@@ -1,0 +1,2 @@
+json.extract! medical_practitioner_profile, :id, :first_name, :last_name, :registration_number, :created_at, :updated_at
+json.url medical_practitioner_profile_url(medical_practitioner_profile, format: :json)

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medical_practitioner_profiles
   root 'home#index'
   devise_for :users
 
