@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115234902) do
+ActiveRecord::Schema.define(version: 20161116003628) do
+
+  create_table "blood_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "medical_practitioner_profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -18,6 +24,11 @@ ActiveRecord::Schema.define(version: 20161115234902) do
     t.string   "registration_number"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "practitioner_profiles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tests", force: :cascade do |t|
