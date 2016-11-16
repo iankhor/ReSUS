@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 BloodType.create([
+    { name: 'Not sure' },
     { name: 'A+' },
     { name: 'A-' },
     { name: 'B+' },
@@ -17,54 +18,41 @@ BloodType.create([
     { name: 'O-' }
 ])
 
-# MedicalCondition.create([
-#     { name: 'A+' },
-#     { name: 'A-' },
-#     { name: 'B+' },
-#     { name: 'B-' },
-#     { name: 'AB+' },
-#     { name: 'AB-' },
-#     { name: 'O+' },
-#     { name: 'O-' }
-# ])
+MedicalCondition.create([
+    { name: 'Not sure' },
+    { name: 'MC1' },
+    { name: 'MC2' },
+    { name: 'MC3' }
+])
 
-# Specialty.create([
-#     { name: 'A+' },
-#     { name: 'A-' },
-#     { name: 'B+' },
-#     { name: 'B-' },
-#     { name: 'AB+' },
-#     { name: 'AB-' },
-#     { name: 'O+' },
-#     { name: 'O-' }
-# ])
+Specialty.create([
+    { name: 'Cardiothoracic Surgery' },
+    { name: 'Orthopedics' },
+    { name: 'Rheumatologuy' },
+    { name: 'Ear, Nose & Throat (ENT)' },
+])
 
-# MaritalStatus.create([
-#     { name: 'A+' },
-#     { name: 'A-' },
-#     { name: 'B+' },
-#     { name: 'B-' },
-#     { name: 'AB+' },
-#     { name: 'AB-' },
-#     { name: 'O+' },
-#     { name: 'O-' }
-# ])
+MaritalStatus.create([
+    { name: 'Single' },
+    { name: 'Married' },
+    { name: 'Widow' }
+])
 
-# Allergy.create([
-#     { name: 'A+' },
-#     { name: 'A-' },
-#     { name: 'B+' },
-#     { name: 'B-' },
-#     { name: 'AB+' },
-#     { name: 'AB-' },
-#     { name: 'O+' },
-#     { name: 'O-' }
-# ])
+Allergy.create([
+    { name: 'Food' },
+    { name: 'Skin' },
+    { name: 'Dust' },
+    { name: 'Insect Sting' },
+    { name: 'Allergic Rhinitis' },
+    { name: 'Latex Allergy' },
+    { name: 'Mold Allergy' },
+    { name: 'Sinus Information' }
+])
 
-# Gender.create([
-#     { name: 'Male' },
-#     { name: 'Female' }
-# ])
+Gender.create([
+    { name: 'Male' },
+    { name: 'Female' }
+])
 
 
 

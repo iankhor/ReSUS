@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116022538) do
+ActiveRecord::Schema.define(version: 20161116033204) do
+
+  create_table "allergies", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "blood_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ethnicities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,6 +35,18 @@ ActiveRecord::Schema.define(version: 20161116022538) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["blood_type_id"], name: "index_experiments_on_blood_type_id"
+  end
+
+  create_table "marital_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_conditions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "medical_practitioner_profiles", force: :cascade do |t|
