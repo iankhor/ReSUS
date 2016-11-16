@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>User ID</th>
+      <th>Email</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Gender</th>
@@ -25,16 +26,17 @@
   <tbody>
     <% @patient_profiles.each do |patient_profile| %>
       <tr>
-        <td><%= patient_profile.user %></td>
+        <td><%= patient_profile.user.id %></td>
+        <td><%= patient_profile.user.email %></td>
         <td><%= patient_profile.first_name %></td>
         <td><%= patient_profile.last_name %></td>
-        <td><%= patient_profile.gender %></td>
+        <td><%= patient_profile.gender.id %></td>
         <td><%= patient_profile.date_of_birth %></td>
-        <td><%= patient_profile.region %></td>
-        <td><%= patient_profile.ethnicity %></td>
-        <td><%= patient_profile.blood_type %></td>
-        <td><%= patient_profile.marital_status %></td>
-        <td><%= patient_profile.allergy %></td>
+        <td><%= patient_profile.region.id %></td>
+        <td><%= patient_profile.ethnicity.id %></td>
+        <td><%= patient_profile.blood_type.id %></td>
+        <td><%= patient_profile.marital_status.id %></td>
+        <td><%= patient_profile.allergy.id %></td>
         <td><%= patient_profile.height %></td>
         <td><%= patient_profile.weight %></td>
         <td><%= patient_profile.contact_number %></td>

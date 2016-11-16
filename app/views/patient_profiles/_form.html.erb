@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :gender_id %>
-    <%= f.text_field :gender_id %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.gender_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
@@ -38,27 +38,27 @@
 
   <div class="field">
     <%= f.label :region_id %>
-    <%= f.text_field :region_id %>
+    <%= f.collection_select(:region_id, Region.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.region_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= f.label :ethnicity_id %>
-    <%= f.text_field :ethnicity_id %>
+    <%= f.collection_select(:ethnicity_id, Ethnicity.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.ethnicity_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= f.label :blood_type_id %>
-    <%= f.text_field :blood_type_id %>
+    <%= f.collection_select(:blood_type_id, BloodType.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.blood_type_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= f.label :marital_status_id %>
-    <%= f.text_field :marital_status_id %>
+    <%= f.collection_select(:marital_status_id, MaritalStatus.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.marital_status_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= f.label :allergy_id %>
-    <%= f.text_field :allergy_id %>
+    <%= f.collection_select(:allergy_id, Allergy.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.allergy_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">

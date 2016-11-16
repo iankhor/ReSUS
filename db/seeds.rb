@@ -38,6 +38,12 @@ MaritalStatus.create([
     { name: 'Widow' }
 ])
 
+Ethnicity.create([
+    { name: 'Eth Placeholer 1' },
+    { name: 'Eth Placeholer 2' },
+    { name: 'Eth Placeholer 3' }
+])
+
 Allergy.create([
     { name: 'Food' },
     { name: 'Skin' },
@@ -52,6 +58,15 @@ Allergy.create([
 Gender.create([
     { name: 'Male' },
     { name: 'Female' }
+])
+
+Region.create([
+    { name: 'WA' },
+    { name: 'NSW' },
+    { name: 'VIC' },
+    { name: 'QLD' },
+    { name: 'ACT' },
+    { name: 'TAS' }
 ])
 
 
