@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @patient_profile.user %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @patient_profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @patient_profile.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient_profile.gender %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @patient_profile.date_of_birth %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @patient_profile.region %>
+</p>
+
+<p>
+  <strong>Ethnicity:</strong>
+  <%= @patient_profile.ethnicity %>
+</p>
+
+<p>
+  <strong>Blood type:</strong>
+  <%= @patient_profile.blood_type %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @patient_profile.marital_status %>
+</p>
+
+<p>
+  <strong>Allergy:</strong>
+  <%= @patient_profile.allergy %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @patient_profile.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @patient_profile.weight %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @patient_profile.contact_number %>
+</p>
+
+<%= link_to 'Edit', edit_patient_profile_path(@patient_profile) %> |
+<%= link_to 'Back', patient_profiles_path %>

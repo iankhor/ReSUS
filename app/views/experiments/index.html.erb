@@ -4,18 +4,36 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Blood id</th>
-      <th>Blood name</th>
-      <th colspan="3"></th>
+    <tr>   
+      <th>User ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>Region</th>
+      <th>Ethnicity</th>
+      <th>Blood type</th>
+      <th>Marital status</th>
+      <th>Known allergies</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Contact number</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @experiments.each do |experiment| %>
       <tr>
+        
+
+        
+        
         <td><%= experiment.blood_type.id %></td>
         <td><%= BloodType.find(experiment.blood_type.id).name %></td>
+
+
+
         <td><%= link_to 'Show', experiment %></td>
         <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
         <td><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

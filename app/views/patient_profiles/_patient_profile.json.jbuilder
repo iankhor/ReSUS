@@ -1,0 +1,2 @@
+json.extract! patient_profile, :id, :user_id, :first_name, :last_name, :gender_id, :date_of_birth, :region_id, :ethnicity_id, :blood_type_id, :marital_status_id, :allergy_id, :height, :weight, :contact_number, :created_at, :updated_at
+json.url patient_profile_url(patient_profile, format: :json)
