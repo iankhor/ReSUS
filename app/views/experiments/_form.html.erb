@@ -1,0 +1,26 @@
+<%= form_for(experiment) do |f| %>
+  <% if experiment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(experiment.errors.count, "error") %> prohibited this experiment from being saved:</h2>
+
+      <ul>
+      <% experiment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :blood_type_id %>
+    <%= f.collection_select(:blood_type_id, BloodType.all, :id, :name, { :prompt => 'Select a Blood Type', :selected => @experiment.blood_type_id }, { class: 'form-control' }) %>
+
+    <%= f.label :blood_type_id %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

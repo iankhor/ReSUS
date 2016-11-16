@@ -17,6 +17,56 @@ BloodType.create([
     { name: 'O-' }
 ])
 
+# MedicalCondition.create([
+#     { name: 'A+' },
+#     { name: 'A-' },
+#     { name: 'B+' },
+#     { name: 'B-' },
+#     { name: 'AB+' },
+#     { name: 'AB-' },
+#     { name: 'O+' },
+#     { name: 'O-' }
+# ])
+
+# Specialty.create([
+#     { name: 'A+' },
+#     { name: 'A-' },
+#     { name: 'B+' },
+#     { name: 'B-' },
+#     { name: 'AB+' },
+#     { name: 'AB-' },
+#     { name: 'O+' },
+#     { name: 'O-' }
+# ])
+
+# MaritalStatus.create([
+#     { name: 'A+' },
+#     { name: 'A-' },
+#     { name: 'B+' },
+#     { name: 'B-' },
+#     { name: 'AB+' },
+#     { name: 'AB-' },
+#     { name: 'O+' },
+#     { name: 'O-' }
+# ])
+
+# Allergy.create([
+#     { name: 'A+' },
+#     { name: 'A-' },
+#     { name: 'B+' },
+#     { name: 'B-' },
+#     { name: 'AB+' },
+#     { name: 'AB-' },
+#     { name: 'O+' },
+#     { name: 'O-' }
+# ])
+
+# Gender.create([
+#     { name: 'Male' },
+#     { name: 'Female' }
+# ])
+
+
 
 # MedicalPractitionerProfile.create!([
 #     {
