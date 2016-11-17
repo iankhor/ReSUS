@@ -26,6 +26,7 @@ class PatientProfilesController < ApplicationController
   # POST /patient_profiles.json
   def create
     @patient_profile = PatientProfile.new(patient_profile_params)
+    @patient_profile.user_id = current_user.id
 
     respond_to do |format|
       if @patient_profile.save

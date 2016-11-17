@@ -4,7 +4,7 @@
 <% if user_signed_in? %>
     <p> User id = <%= current_user.id%> </p>
     <p> User email = <%= current_user.email%> </p>
-     <p> role = <%= current_user.role%> </p>   
+     <p> role = <%= ValidRole.find(current_user.role).name %> </p>   
 
 <% else %>
     <p> not signed in </p>
