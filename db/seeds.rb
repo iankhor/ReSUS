@@ -70,7 +70,10 @@ Region.create([
 ])
 
 ValidRole.create([
-    { name: 'I want to seek treatment' },
+    #id 1 = patients
+    #id 2 = practitioners
+
+    { name: 'I want to seek treatment' }, 
     { name: 'I want to help' }
 ])
 
