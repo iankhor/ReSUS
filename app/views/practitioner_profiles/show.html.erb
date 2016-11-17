@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @practitioner_profile.gender %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @practitioner_profile.region %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @practitioner_profile.user %>
+</p>
+
+<p>
+  <strong>Registration number:</strong>
+  <%= @practitioner_profile.registration_number %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @practitioner_profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @practitioner_profile.last_name %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @practitioner_profile.specialty %>
+</p>
+
+<%= link_to 'Edit', edit_practitioner_profile_path(@practitioner_profile) %> |
+<%= link_to 'Back', practitioner_profiles_path %>

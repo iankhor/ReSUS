@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :practitioner_profiles
   resources :patient_profiles
   resources :experiments
   root 'home#index'
