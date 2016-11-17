@@ -69,7 +69,10 @@ Region.create([
     { name: 'TAS' }
 ])
 
-
+ValidRole.create([
+    { name: 'I want to seek treatment' },
+    { name: 'I want to help' }
+])
 
 # MedicalPractitionerProfile.create!([
 #     {

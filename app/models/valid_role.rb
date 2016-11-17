@@ -1,0 +1,2 @@
+class ValidRole < ApplicationRecord
+end

@@ -22,8 +22,10 @@
   </div>
 
   <div class="">
-    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+    <h4> What do you want to do ? </h4> 
+      <%= f.collection_select :role, ValidRole.all, :id, :name  %>
   </div>
+  <br/>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
