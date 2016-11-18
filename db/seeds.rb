@@ -20,16 +20,21 @@ BloodType.create([
 
 MedicalCondition.create([
     { name: 'Not sure' },
-    { name: 'MC1' },
-    { name: 'MC2' },
-    { name: 'MC3' }
+    { name: 'Aortic surgery' },
+    { name: 'Cardiac surgery' },
+    { name: 'Thoracic Surgery' },
+    { name: 'Gout' },
+    { name: 'Hip surgery or replacement' },
+    { name: 'Knee surgery or replacement' },
+    { name: 'Lupus' },
+    { name: 'Tendonitis' }
 ])
+
 
 Specialty.create([
     { name: 'Cardiothoracic Surgery' },
     { name: 'Orthopedics' },
-    { name: 'Rheumatologuy' },
-    { name: 'Ear, Nose & Throat (ENT)' },
+    { name: 'Rheumatologuy' }
 ])
 
 MaritalStatus.create([
