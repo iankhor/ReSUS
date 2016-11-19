@@ -20,21 +20,73 @@ BloodType.create([
 
 MedicalCondition.create([
     { name: 'Not sure' },
-    { name: 'Aortic surgery' },
-    { name: 'Cardiac surgery' },
-    { name: 'Thoracic Surgery' },
-    { name: 'Gout' },
-    { name: 'Hip surgery or replacement' },
-    { name: 'Knee surgery or replacement' },
-    { name: 'Lupus' },
-    { name: 'Tendonitis' }
+    {   name: 'Aortic surgery', 
+        specialty: Specialty.where(name: 'Cardiothoracic Surgery') 
+    },
+
+    {   name: 'Cardiac surgery',
+        specialty: Specialty.where(name: 'Cardiothoracic Surgery') 
+    },
+
+    {   name: 'Thoracic Surgery',
+        specialty: Specialty.where(name: 'Cardiothoracic Surgery') 
+    },
+
+    {   name: 'Hip surgery or replacement',
+        specialty: Specialty.where(name: 'Orthopedics') 
+    },
+
+    {   name: 'Knee surgery or replacement',
+        specialty: Specialty.where(name: 'Orthopedics') 
+    },
+
+    {   name: 'Tendonitis',
+        specialty: Specialty.where(name: 'Orthopedics') 
+    },
+
+    {   name: 'Lupus',
+        specialty: Specialty.where(name: 'Rheumatology') 
+    },
+
+    {   name: 'Gout',
+        specialty: Specialty.where(name: 'Rheumatology') 
+    }
 ])
 
 
 Specialty.create([
-    { name: 'Cardiothoracic Surgery' },
-    { name: 'Orthopedics' },
-    { name: 'Rheumatologuy' }
+    {   name: 'Cardiothoracic Surgery',
+        medical_condition: MedicalCondition.where(name: 'Aortic surgery')
+    },
+
+    {   name: 'Cardiothoracic Surgery',
+        medical_condition: MedicalCondition.where('Cardiac surgery')
+    },
+
+    {   name: 'Cardiothoracic Surgery',
+        medical_condition: MedicalCondition.where('Thoracic surgery')
+    },
+
+    {   name: 'Orthopedics',
+        medical_condition: MedicalCondition.where('Hip surgery or replacement')
+    },
+
+    {   name: 'Orthopedics',
+        medical_condition: MedicalCondition.where('Knee surgery or replacement')
+    },
+
+    {   name: 'Orthopedics',
+        medical_condition: MedicalCondition.where('Tendonitis')
+    },
+
+    {   name: 'Rheumatologyy',
+        medical_condition: MedicalCondition.where('Lupus')
+    },
+
+    {   name: 'Rheumatologyy',
+        medical_condition: MedicalCondition.where('Gout')
+    },
+
 ])
 
 MaritalStatus.create([

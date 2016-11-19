@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117031738) do
+ActiveRecord::Schema.define(version: 20161118074450) do
 
   create_table "allergies", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20161117031738) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "condition_specialties", force: :cascade do |t|
+    t.integer "medical_conditions_id"
+    t.integer "specialties_id"
+    t.index ["medical_conditions_id"], name: "index_condition_specialties_on_medical_conditions_id"
+    t.index ["specialties_id"], name: "index_condition_specialties_on_specialties_id"
   end
 
   create_table "ethnicities", force: :cascade do |t|
@@ -49,10 +56,27 @@ ActiveRecord::Schema.define(version: 20161117031738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "medcondition_specialty_relationships", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "specialty_id"
+    t.integer  "condition_id"
+  end
+
+  create_table "medical_condition_specialties", force: :cascade do |t|
+  end
+
   create_table "medical_conditions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_conditions_specialties", force: :cascade do |t|
+    t.integer "medical_conditions_id"
+    t.integer "specialties_id"
+    t.index ["medical_conditions_id"], name: "index_medical_conditions_specialties_on_medical_conditions_id"
+    t.index ["specialties_id"], name: "index_medical_conditions_specialties_on_specialties_id"
   end
 
   create_table "patient_profiles", force: :cascade do |t|
