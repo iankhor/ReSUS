@@ -1,23 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Gender:</strong>
-  <%= @practitioner_profile.gender %>
+  <strong>Practitioner Profile ID :</strong>
+  <%= @practitioner_profile.id %>
 </p>
 
 <p>
-  <strong>Region:</strong>
-  <%= @practitioner_profile.region %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @practitioner_profile.user %>
-</p>
-
-<p>
-  <strong>Registration number:</strong>
-  <%= @practitioner_profile.registration_number %>
+  <strong>User ID :</strong>
+  <%= @practitioner_profile.user.id %>
 </p>
 
 <p>
@@ -32,8 +22,27 @@
 
 <p>
   <strong>Specialty:</strong>
-  <%= @practitioner_profile.specialty %>
+  <%= Specialty.find_by(id: @practitioner_profile.specialty.id).name %>
 </p>
 
+<p>
+  <strong>Gender:</strong>
+  <%= Region.find_by(id: @practitioner_profile.region.id).name  %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= Region.find_by(id: @practitioner_profile.region.id).name %>
+</p>
+
+
+<p>
+  <strong>Registration number:</strong>
+  <%= @practitioner_profile.registration_number %>
+</p>
+
+<p>
+
+
 <%= link_to 'Edit', edit_practitioner_profile_path(@practitioner_profile) %> |
-<%= link_to 'Back', practitioner_profiles_path %>
+<%= link_to 'Back', root_path %>

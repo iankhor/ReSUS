@@ -5,13 +5,16 @@
 <table>
   <thead>
     <tr>
-      <th>Gender</th>
-      <th>Region</th>
-      <th>User</th>
-      <th>Registration number</th>
+      <th>User ID</th>
+      <th>Profile ID</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Specialty</th>
+      <th>Registration number</th>
+      <th>Gender</th>
+      <th>Region</th>
+      <th>First name</th>
+      <th>Last name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +22,14 @@
   <tbody>
     <% @practitioner_profiles.each do |practitioner_profile| %>
       <tr>
-        <td><%= practitioner_profile.gender %></td>
-        <td><%= practitioner_profile.region %></td>
-        <td><%= practitioner_profile.user %></td>
-        <td><%= practitioner_profile.registration_number %></td>
+        <td><%= practitioner_profile.user.id %></td>
+        <td><%= practitioner_profile.id %></td>
         <td><%= practitioner_profile.first_name %></td>
         <td><%= practitioner_profile.last_name %></td>
-        <td><%= practitioner_profile.specialty %></td>
+        <td><%= Specialty.find_by(id: practitioner_profile.specialty.id).name %></td>
+        <td><%= Gender.find_by(id: practitioner_profile.gender.id).name  %></td>
+        <td><%= Region.find_by(id: practitioner_profile.region.id).name  %></td>
+        <td><%= practitioner_profile.registration_number %></td>
         <td><%= link_to 'Show', practitioner_profile %></td>
         <td><%= link_to 'Edit', edit_practitioner_profile_path(practitioner_profile) %></td>
         <td><%= link_to 'Destroy', practitioner_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

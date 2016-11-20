@@ -27,6 +27,7 @@ class PractitionerProfilesController < ApplicationController
   # POST /practitioner_profiles.json
   def create
     @practitioner_profile = PractitionerProfile.new(practitioner_profile_params)
+    @practitioner_profile.user_id = current_user.id
 
     respond_to do |format|
       if @practitioner_profile.save
