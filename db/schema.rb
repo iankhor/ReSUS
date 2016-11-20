@@ -73,10 +73,10 @@ ActiveRecord::Schema.define(version: 20161118074450) do
   end
 
   create_table "medical_conditions_specialties", force: :cascade do |t|
-    t.integer "medical_conditions_id"
-    t.integer "specialties_id"
-    t.index ["medical_conditions_id"], name: "index_medical_conditions_specialties_on_medical_conditions_id"
-    t.index ["specialties_id"], name: "index_medical_conditions_specialties_on_specialties_id"
+    t.integer "medical_condition_id"
+    t.integer "specialty_id"
+    t.index ["medical_condition_id"], name: "index_medical_conditions_specialties_on_medical_condition_id"
+    t.index ["specialty_id"], name: "index_medical_conditions_specialties_on_specialty_id"
   end
 
   create_table "patient_profiles", force: :cascade do |t|
