@@ -76,9 +76,9 @@
     <%= f.number_field :contact_number %>
   </div>
 
-  <div class="field">
-    <p>Upload picture</p>
-    <%= file_field(current_user, :picture)%>
+  <div class="form-inputs">
+    <p>Upload photo</p>
+    <%= f.input :photo, as: :file%>
   </div>
 
   <div class="actions">

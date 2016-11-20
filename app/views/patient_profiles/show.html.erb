@@ -73,7 +73,7 @@
 
 <p>
   <strong>Photo URL:</strong>
-  <%= @patient_profile.picture_url %>
+  <%= image_tag @patient_profile.photo_url%>
 </p>
 
 <%= link_to 'Edit', edit_patient_profile_path(@patient_profile) %> |

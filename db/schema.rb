@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120082951) do
+ActiveRecord::Schema.define(version: 20161120095224) do
 
   create_table "allergies", force: :cascade do |t|
     t.string   "name"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20161120082951) do
     t.integer  "contact_number"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "photo"
     t.index ["allergy_id"], name: "index_patient_profiles_on_allergy_id"
     t.index ["blood_type_id"], name: "index_patient_profiles_on_blood_type_id"
     t.index ["ethnicity_id"], name: "index_patient_profiles_on_ethnicity_id"
@@ -102,14 +103,6 @@ ActiveRecord::Schema.define(version: 20161120082951) do
     t.index ["marital_status_id"], name: "index_patient_profiles_on_marital_status_id"
     t.index ["region_id"], name: "index_patient_profiles_on_region_id"
     t.index ["user_id"], name: "index_patient_profiles_on_user_id"
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "practitioner_profiles", force: :cascade do |t|
@@ -154,11 +147,8 @@ ActiveRecord::Schema.define(version: 20161120082951) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
-    t.integer  "user_id"
-    t.string   "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   create_table "valid_roles", force: :cascade do |t|

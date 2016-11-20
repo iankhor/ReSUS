@@ -7,5 +7,5 @@ class PatientProfile < ApplicationRecord
   belongs_to :marital_status
   belongs_to :allergy
 
-  mount_uploader :picture, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 end
