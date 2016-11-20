@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medical condition:</strong>
+  <%= MedicalCondition.find(@listing.medical_condition.id).name %>
+</p>
+
+<p>
+  <strong>Patient name:</strong>
+  <%= PatientProfile.find(@listing.patient.id).first_name + PatientProfile.find(@listing.patient.id).last_name %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @listing.comments %>
+</p>
+
+<p>
+  <strong>Photo medical data:</strong>
+  <%= @listing.photo_medical_data %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
