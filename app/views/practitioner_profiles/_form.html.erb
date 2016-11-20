@@ -8,7 +8,7 @@
     <%= f.input :registration_number %>
     <%= f.association :specialty, collection: Specialty.all, value_method: :id %>
     <%= f.association :gender, collection: Gender.all, value_method: :id %>
-    <%= f.association :region, collection: Gender.all, value_method: :id %>
+    <%= f.association :region, collection: Region.all, value_method: :id %>
   </div>
 
   <div class="form-actions">
