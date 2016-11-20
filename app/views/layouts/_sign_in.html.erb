@@ -36,7 +36,9 @@
                 <% current_profile = PractitionerProfile.find_by(id: current_user.id) %>
             <% end %>
 
-            <li>Welcome <%= current_profile.id %></li>
+            <% if not current_profile.nil? %>
+                 <li><%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
+            <% end  %>
 
         <% else %>
             <li><%= link_to 'New User', new_user_registration_path %></li>
@@ -46,7 +48,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-
