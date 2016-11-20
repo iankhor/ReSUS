@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Patient ID:</strong>
+  <%= @listing.patient.id %>
+</p>
+
+<p>
   <strong>Medical condition:</strong>
   <%= MedicalCondition.find(@listing.medical_condition.id).name %>
 </p>
 
 <p>
   <strong>Patient name:</strong>
-  <%= PatientProfile.find(@listing.patient.id).first_name + PatientProfile.find(@listing.patient.id).last_name %>
+  <%= PatientProfile.find(@listing.patient.id).first_name + ' ' + PatientProfile.find(@listing.patient.id).last_name %>
 </p>
 
 <p>

@@ -6,7 +6,9 @@
   <thead>
     <tr>
       <th>Medical condition</th>
-      <th>Patient</th>
+      <th>Patient ID</th>
+      <th>Patient First name</th>
+      <th>Patient Last name</th>
       <th>Comments</th>
       <th>Photo medical data</th>
       <th colspan="3"></th>
@@ -17,7 +19,9 @@
     <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.medical_condition %></td>
-        <td><%= listing.patient %></td>
+        <td><%= listing.patient.id %></td>
+        <td><%= PatientProfile.find(listing.patient.id).first_name %></td>
+        <td><%= PatientProfile.find(listing.patient.id).last_name %></td>
         <td><%= listing.comments %></td>
         <td><%= listing.photo_medical_data %></td>
         <td><%= link_to 'Show', listing %></td>

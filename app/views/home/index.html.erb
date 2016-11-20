@@ -2,17 +2,12 @@
 <p>Healthcare for Everyone !</p>
 
 <% if user_signed_in? %>
-    <p> User id = <%= current_user.id%> </p>
-    <p> User email = <%= current_user.email%> </p>
-    <p> role = <%= ValidRole.find(current_user.role).name %> </p> 
-    <!--<p> picture_url = <#%= current_user.photo_url %></p>-->
-
     <% case current_user.role.to_i %>
         <% when 1 %>
-            <%= link_to 'New listing', new_listing_path %>
+           <h2> <%= link_to 'New listing', new_listing_path %> </h2>
     <% end %>
 
 
 <% else %>
-    <p> not signed in </p>
+    <h2> not signed in </h2>
 <% end %>

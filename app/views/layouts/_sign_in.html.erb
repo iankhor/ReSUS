@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
     <%= link_to 'Home', root_path %>
     <%= link_to 'Patient Profile', patient_profiles_path %>
+    <%= link_to 'Practitioner Profile', practitioner_profiles_path %>
+    <%= link_to 'Listings', listings_path %>
     <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
     
     <% case current_user.role.to_i %>
