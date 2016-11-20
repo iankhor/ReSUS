@@ -7,12 +7,14 @@
     
     <% case current_user.role.to_i %>
         <% when 1 %>
-            <% name = PatientProfile.find(current_user.id).first_name + ' ' + PatientProfile.find(current_user.id).last_name %>
+            <% current_profile = PatientProfile.find_by(id: current_user.id) %>%
         <% when 2 %>
-            <% name = PractitionerProfile.find(current_user.id).first_name + ' ' + PractitionerProfile.find(current_user.id).last_name %>
+            <% current_profile = PractitionerProfile.find_by(id: current_user.id) %>
     <% end %>
 
-    <h3> Welcome <%= name %> ! </h3>
+    <% if not current_profile.nil? %>
+        <h3> Welcome <%= current_profile.first_name + ' ' + current_profile.last_name %> ! </h3>
+    <% end  %>
 
 
 <% else %>
