@@ -2,6 +2,17 @@
     <%= link_to 'Home', root_path %>
     <%= link_to 'Patient Profile', patient_profiles_path %>
     <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    
+    <% case current_user.role.to_i %>
+        <% when 1 %>
+            <% name = PatientProfile.find(current_user.id).first_name + ' ' + PatientProfile.find(current_user.id).last_name %>
+        <% when 2 %>
+            <% name = PractitionerProfile.find(current_user.id).first_name + ' ' + PractitionerProfile.find(current_user.id).last_name %>
+    <% end %>
+
+    <h3> Welcome <%= name %> ! </h3>
+
+
 <% else %>
     <%= link_to 'New User', new_user_registration_path %>
     <%= link_to 'Log in', new_user_session_path %>
