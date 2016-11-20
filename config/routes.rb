@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotes
   resources :listings
   resources :practitioner_profiles
   resources :patient_profiles
