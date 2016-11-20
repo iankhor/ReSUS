@@ -6,4 +6,6 @@ class PatientProfile < ApplicationRecord
   belongs_to :blood_type
   belongs_to :marital_status
   belongs_to :allergy
+
+  mount_uploader :picture, PhotoUploader
 end
