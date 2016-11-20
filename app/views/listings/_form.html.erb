@@ -3,7 +3,7 @@
 
 
   <div class="form-inputs">
-    <%= f.association :medical_condition %>
+    <%= f.association :medical_condition, collection: MedicalCondition.all, value_method: :id %>
     <%= f.input :comments %>
     <%= f.input :photo_medical_data %>
   </div>

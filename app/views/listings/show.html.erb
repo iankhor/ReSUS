@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Medical condition ID:</strong>
+  <%= @listing.medical_condition.id %>
+</p>
+
+<p>
   <strong>Medical condition:</strong>
   <%= MedicalCondition.find(@listing.medical_condition.id).name %>
 </p>
