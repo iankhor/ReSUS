@@ -10,5 +10,15 @@
   <%= @quote.practitioner %>
 </p>
 
+<p>
+  <strong>Listing:</strong>
+  <%= @quote.listing %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @quote.comments %>
+</p>
+
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', quotes_path %>

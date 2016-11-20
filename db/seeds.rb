@@ -82,6 +82,82 @@ ValidRole.create([
     { name: 'I want to help' }
 ])
 
+patient_user = User.create!(
+  email: 'ian@ian.com',
+  password: '123123',
+  password_confirmation: '123123'
+)
+
+patient2_user = User.create!(
+  email: 'jack@jack.com',
+  password: '123123',
+  password_confirmation: '123123'
+)
+
+PatientProfile.create!([
+  {
+  user:             patient_user,
+  first_name:       'ian',
+  last_name:        'khor',
+  height:           '312',
+  weight:           '123',
+  date_of_birth:    '555',
+  gender:            Gender.find(2),
+  region:            Region.find(2),
+  ethnicity:         Ethnicity.find(2),
+  blood_type:        BloodType.find(2),
+  marital_status:    MaritalStatus.find(2),
+  allergy:           Allergy.find(2),
+  contact_number:   '999'
+  },
+
+ {
+  user:             patient2_user,
+  first_name:       'jack',
+  last_name:        'saw',
+  height:           '312',
+  weight:           '123',
+  date_of_birth:    '555',
+  gender:            Gender.find(2),
+  region:            Region.find(3),
+  ethnicity:         Ethnicity.find(3),
+  blood_type:        BloodType.find(6),
+  marital_status:    MaritalStatus.find(2),
+  allergy:           Allergy.find(2),
+  contact_number:   '000'
+  },
+])
+
+Listing.create([
+    {
+        patient:                patient2_user,
+        medical_condition:      MedicalCondition.find(2),
+        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+        photo_medical_data:     "some link 1 "
+    },
+
+    {
+        patient:                patient_user,
+        medical_condition:      MedicalCondition.find(5),
+        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+        photo_medical_data:     "some link 2" 
+    },
+
+    {
+        patient:                patient_user,
+        medical_condition:      MedicalCondition.find(4),
+        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+        photo_medical_data:     "some link 3"
+    },
+
+    {
+        patient:                patient2_user,
+        medical_condition:      MedicalCondition.find(4),
+        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+        photo_medical_data:     "some link 3"
+    }
+
+])
 
 
 

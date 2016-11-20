@@ -7,6 +7,8 @@
     <tr>
       <th>Quote cost</th>
       <th>Practitioner</th>
+      <th>Listing</th>
+      <th>Comments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= quote.quote_cost %></td>
         <td><%= quote.practitioner %></td>
+        <td><%= quote.listing %></td>
+        <td><%= quote.comments %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
         <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
