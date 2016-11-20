@@ -32,23 +32,31 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>No.</th>
+                  <th>Condition ID.</th>
                   <th>Medical condition</th>
                   <th>Name</th>
                   <th>Gender</th>
-                  <th></th>
-
+                  <th>Placeholder 5</th>
        
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
+                  <!--<td>1,001</td>
                   <td>Lorem</td>
                   <td>ipsum</td>
                   <td>dolor</td>
-                  <td>sit</td>
+                  <td>sit</td>-->
+                <% @dashboard.each do |listing| %>
+                <tr>
+                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition) %> </td>
+                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition) %> </td>
+                    <td> <%= PatientProfile.find_by(id: listing.patient.id).first_name %> </td>
+                    <td> placeholder 4</td>
+                    <td> placeholder 5</td>
+                </tr>
+                <% end%>
+
+
                 </tr>
          
               </tbody>
