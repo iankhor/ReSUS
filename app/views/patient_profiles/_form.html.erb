@@ -1,4 +1,4 @@
-<%= form_for(patient_profile) do |f| %>
+<%= simple_form_for(patient_profile) do |f| %>
   <% if patient_profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(patient_profile.errors.count, "error") %> prohibited this patient_profile from being saved:</h2>
@@ -78,7 +78,7 @@
 
   <div class="field">
     <p>Upload picture</p>
-    <%= f.input :picture, as: :file%>
+    <%= file_field(current_user, :picture)%>
   </div>
 
   <div class="actions">
