@@ -21,7 +21,6 @@
             <li><%= link_to 'Patient Profile', patient_profiles_path %></li>
             <li><%= link_to 'Practitioner Profile', practitioner_profiles_path %></li>
             <li><%= link_to 'Listings', listings_path %></li>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
         <% end %>
 
@@ -39,6 +38,7 @@
             <% if not current_profile.nil? %>
                  <li><%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
             <% end  %>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
         <% else %>
             <li><%= link_to 'New User', new_user_registration_path %></li>
