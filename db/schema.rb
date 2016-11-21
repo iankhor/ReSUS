@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161120220134) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "allergies", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
   create_table "condition_specialties", force: :cascade do |t|
     t.integer "medical_conditions_id"
     t.integer "specialties_id"
-    t.index ["medical_conditions_id"], name: "index_condition_specialties_on_medical_conditions_id"
-    t.index ["specialties_id"], name: "index_condition_specialties_on_specialties_id"
+    t.index ["medical_conditions_id"], name: "index_condition_specialties_on_medical_conditions_id", using: :btree
+    t.index ["specialties_id"], name: "index_condition_specialties_on_specialties_id", using: :btree
   end
 
   create_table "ethnicities", force: :cascade do |t|
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.integer  "blood_type_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["blood_type_id"], name: "index_experiments_on_blood_type_id"
+    t.index ["blood_type_id"], name: "index_experiments_on_blood_type_id", using: :btree
   end
 
   create_table "genders", force: :cascade do |t|
@@ -57,8 +60,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.string   "photo_medical_data"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.index ["medical_condition_id"], name: "index_listings_on_medical_condition_id"
-    t.index ["patient_id"], name: "index_listings_on_patient_id"
+    t.index ["medical_condition_id"], name: "index_listings_on_medical_condition_id", using: :btree
+    t.index ["patient_id"], name: "index_listings_on_patient_id", using: :btree
   end
 
   create_table "marital_statuses", force: :cascade do |t|
@@ -86,8 +89,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
   create_table "medical_conditions_specialties", force: :cascade do |t|
     t.integer "medical_condition_id"
     t.integer "specialty_id"
-    t.index ["medical_condition_id"], name: "index_medical_conditions_specialties_on_medical_condition_id"
-    t.index ["specialty_id"], name: "index_medical_conditions_specialties_on_specialty_id"
+    t.index ["medical_condition_id"], name: "index_medical_conditions_specialties_on_medical_condition_id", using: :btree
+    t.index ["specialty_id"], name: "index_medical_conditions_specialties_on_specialty_id", using: :btree
   end
 
   create_table "patient_profiles", force: :cascade do |t|
@@ -107,13 +110,13 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "photo"
-    t.index ["allergy_id"], name: "index_patient_profiles_on_allergy_id"
-    t.index ["blood_type_id"], name: "index_patient_profiles_on_blood_type_id"
-    t.index ["ethnicity_id"], name: "index_patient_profiles_on_ethnicity_id"
-    t.index ["gender_id"], name: "index_patient_profiles_on_gender_id"
-    t.index ["marital_status_id"], name: "index_patient_profiles_on_marital_status_id"
-    t.index ["region_id"], name: "index_patient_profiles_on_region_id"
-    t.index ["user_id"], name: "index_patient_profiles_on_user_id"
+    t.index ["allergy_id"], name: "index_patient_profiles_on_allergy_id", using: :btree
+    t.index ["blood_type_id"], name: "index_patient_profiles_on_blood_type_id", using: :btree
+    t.index ["ethnicity_id"], name: "index_patient_profiles_on_ethnicity_id", using: :btree
+    t.index ["gender_id"], name: "index_patient_profiles_on_gender_id", using: :btree
+    t.index ["marital_status_id"], name: "index_patient_profiles_on_marital_status_id", using: :btree
+    t.index ["region_id"], name: "index_patient_profiles_on_region_id", using: :btree
+    t.index ["user_id"], name: "index_patient_profiles_on_user_id", using: :btree
   end
 
   create_table "practitioner_profiles", force: :cascade do |t|
@@ -126,10 +129,10 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.integer  "specialty_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["gender_id"], name: "index_practitioner_profiles_on_gender_id"
-    t.index ["region_id"], name: "index_practitioner_profiles_on_region_id"
-    t.index ["specialty_id"], name: "index_practitioner_profiles_on_specialty_id"
-    t.index ["user_id"], name: "index_practitioner_profiles_on_user_id"
+    t.index ["gender_id"], name: "index_practitioner_profiles_on_gender_id", using: :btree
+    t.index ["region_id"], name: "index_practitioner_profiles_on_region_id", using: :btree
+    t.index ["specialty_id"], name: "index_practitioner_profiles_on_specialty_id", using: :btree
+    t.index ["user_id"], name: "index_practitioner_profiles_on_user_id", using: :btree
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -139,8 +142,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.string   "comments"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["listing_id"], name: "index_quotes_on_listing_id"
-    t.index ["practitioner_id"], name: "index_quotes_on_practitioner_id"
+    t.index ["listing_id"], name: "index_quotes_on_listing_id", using: :btree
+    t.index ["practitioner_id"], name: "index_quotes_on_practitioner_id", using: :btree
   end
 
   create_table "regions", force: :cascade do |t|
@@ -169,8 +172,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "valid_roles", force: :cascade do |t|
