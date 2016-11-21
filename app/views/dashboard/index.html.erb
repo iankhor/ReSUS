@@ -32,11 +32,11 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Condition ID.</th>
+                  <th>No.</th>
                   <th>Medical condition</th>
                   <th>Name</th>
                   <th>Gender</th>
-                  <th>Placeholder 5</th>
+                  <th>D.O.B</th>
        
                 </tr>
               </thead>
@@ -46,13 +46,15 @@
                   <td>ipsum</td>
                   <td>dolor</td>
                   <td>sit</td>-->
-                <% @dashboard.each do |listing| %>
+                <% @dashboard.each_with_index do |listing, index| %>
+                    <% current_patient = PatientProfile.find_by(id: listing.patient.id) %>
+
                 <tr>
-                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition) %> </td>
-                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition) %> </td>
-                    <td> <%= PatientProfile.find_by(id: listing.patient.id).first_name %> </td>
-                    <td> placeholder 4</td>
-                    <td> placeholder 5</td>
+                    <td> <%= index + 1 %> </td>
+                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
+                    <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
+                    <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
+                    <td> <%= current_patient.date_of_birth %> </td>
                 </tr>
                 <% end%>
 
