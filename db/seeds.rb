@@ -85,13 +85,15 @@ ValidRole.create([
 patient_user = User.create!(
   email: 'ian@ian.com',
   password: '123123',
-  password_confirmation: '123123'
+  password_confirmation: '123123',
+  role: '1'
 )
 
 patient2_user = User.create!(
   email: 'jack@jack.com',
   password: '123123',
-  password_confirmation: '123123'
+  password_confirmation: '123123',
+  role: '1'
 )
 
 PatientProfile.create!([
@@ -160,25 +162,57 @@ Listing.create([
 ])
 
 
+practitioner_user = User.create!(
+  email: 'ws@ws.com',
+  password: '123123',
+  password_confirmation: '123123',
+  role: '2'
+)
 
-# MedicalPractitionerProfile.create!([
-#     {
-#         first_name: "Ian",
-#         last_name:  "Khor",
-#         registration_number: "1234ABC"
-#     },
-    
-#     {
-#         first_name: "Sharon",
-#         last_name:  "Chen",
-#         registration_number: "1234ABC"
-#     },
+practitioner2_user = User.create!(
+  email: 'lk@lk.com',
+  password: '123123',
+  password_confirmation: '123123',
+  role: '2'
+)
 
+PractitionerProfile.create!([
+  {
+  user:             practitioner_user,
+  first_name:       'wei',
+  last_name:        'shen',
+  gender:            Gender.find(1),
+  region:            Region.find(2),
+  specialty:         Specialty.find(3)   
+  },
+
+  {
+  user:             practitioner2_user,
+  first_name:       'lee',
+  last_name:        'keng',
+  gender:            Gender.find(2),
+  region:            Region.find(4),
+  specialty:         Specialty.find(1)   
+  }
+])
+
+    #   t.references :gender, foreign_key: true
+    #   t.references :region, foreign_key: true
+    #   t.references :user, foreign_key: true
+    #   t.string :registration_number
+    #   t.string :first_name
+    #   t.string :last_name
+    #   t.references :specialty, foreign_key: true
+
+
+# Quote.create([
 #     {
-#         first_name: "Jason",
-#         last_name:  "Hincliffe",
-#         registration_number: "1234ABC"
+#         quote_cost:        practitioner_user,
+#         practitioner:      
+#         listing:           "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         comments:          "Mou Duk Gou "
 #     }
 
 
 # ])
+
