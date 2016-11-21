@@ -37,7 +37,7 @@
                   <th>Name</th>
                   <th>Gender</th>
                   <th>D.O.B</th>
-                  <th>Button Quote Placeholder</th>
+                  <th>Quote</th>
        
                 </tr>
               </thead>
@@ -56,7 +56,7 @@
                     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
                     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
                     <td> <%= current_patient.date_of_birth %> </td>
-                    <td> Quote button Placeholder </td>
+                    <td> <button type="button" class="btn btn-default">Quote</button></td>
                 </tr>
                 <% end%>
 
@@ -69,3 +69,4 @@
         </div>
       </div>
     </div>
+
