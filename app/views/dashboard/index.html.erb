@@ -1,6 +1,6 @@
   <div class="container-fluid">
       <div class="row">
-        
+        <!--Place holder for basic analytics-->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
@@ -37,6 +37,7 @@
                   <th>Name</th>
                   <th>Gender</th>
                   <th>D.O.B</th>
+                  <th>Button Quote Placeholder</th>
        
                 </tr>
               </thead>
@@ -55,6 +56,7 @@
                     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
                     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
                     <td> <%= current_patient.date_of_birth %> </td>
+                    <td> Quote button Placeholder </td>
                 </tr>
                 <% end%>
 
