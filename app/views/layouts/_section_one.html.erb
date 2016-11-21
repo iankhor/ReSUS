@@ -15,13 +15,14 @@
                     <% if user_signed_in? %>
                         <% case current_user.role.to_i %>
                         <% when 1 %>
-                            <% current_profile = PatientProfile.find_by(id: current_user.id) %>%
+                            <% current_profile = PatientProfile.find_by(id: current_user.id) %>
                         <% when 2 %>
                             <% current_profile = PractitionerProfile.find_by(id: current_user.id) %>
                         <% end %>
 
                         <% if not current_profile.nil? %>
                             <li><%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
+                            <li><%= link_to 'Dashboard', dashboard_index_path  %> </li>
                         <% end  %>
                         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
