@@ -27,6 +27,7 @@
         <td><%= practitioner_profile.last_name%></td>
         <td><%= listing.id %></td>
         <td><%= MedicalCondition.find(listing.medical_condition.id).name %></td>
+        <td><%= quote.quote_cost %></td>
         <td><%= quote.comments %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) %></td>

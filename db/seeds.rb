@@ -206,28 +206,28 @@ Quote.create([
 
         {
         practitioner:      practitioner2_user,
-        quote_cost:        2000 ,
+        quote_cost:        3000 ,
         listing:           Listing.find(3),
         comments:          "Mou Duk Gou "
     },
 
         {
         practitioner:      practitioner2_user,
-        quote_cost:        2000 ,
+        quote_cost:        4000 ,
         listing:           Listing.find(2),
         comments:          "Mou Duk Gou "
     },
 
     {
         practitioner:      practitioner_user,
-        quote_cost:        2000 ,
+        quote_cost:        5000 ,
         listing:           Listing.find(1),
         comments:          "Mou Duk Gou "
     },
 
     {
         practitioner:      practitioner2_user,
-        quote_cost:        2000 ,
+        quote_cost:        9000 ,
         listing:           Listing.find(1),
         comments:          "Mou Duk Gou "
     }
