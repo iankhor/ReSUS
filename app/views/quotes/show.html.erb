@@ -7,7 +7,7 @@
 
 <p>
   <strong>Practitioner Name:</strong>
-  <%= PractitionerProfile.find_by(id: @quote.practitioner.id) + ' ' + PractitionerProfile.find_by(id: @quote.practitioner.id) %>
+  <%= PractitionerProfile.find_by(user_id: @quote.practitioner.id).first_name + ' ' + PractitionerProfile.find_by(user_id: @quote.practitioner.id).last_name %>
 </p>
 
 <p>
