@@ -1,13 +1,15 @@
-<% @dashboard.each_with_index do |listing, index| %>
+<% @dashboard.each_with_index do |quote, index| %>
+    <% listing = Listing.find_by(id: quote.listing.id) %>
     <% current_patient = PatientProfile.find_by(id: listing.patient.id) %>
+
 
 <tr>
     <td> <%= index + 1 %> </td>
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> Quote cost </td>
-    <td><%= button_to 'Quote', new_quote_path, class: 'btn btn-default'  %> </td>
-    <td><%= button_to 'See listing', listing_path(id: listing.id), method: :get, class: 'btn btn-default'%> </td>
+    <td> <%= quote.quote_cost %> </td>
+    <td><%= button_to 'Quote', edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>
+    <td><%= button_to 'See listing', listing_path(id: quote.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
 <% end%>

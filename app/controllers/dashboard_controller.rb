@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
     def index
-        @dashboard = Listing.all
+        @dashboard = Quote.all
     end
 
     
