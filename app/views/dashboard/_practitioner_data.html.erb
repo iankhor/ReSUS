@@ -6,7 +6,8 @@
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> <%= current_patient.date_of_birth %> </td>
-    <td> <button type="button" class="btn btn-default">Quote</button></td>
+    <td> Quote cost </td>
+    <td><%= button_to 'Quote', new_quote_path, class: 'btn btn-default'  %> </td>
+    <td><%= button_to 'See listing', listing_path(id: listing.id), method: :get, class: 'btn btn-default'%> </td>
 </tr>
 <% end%>
