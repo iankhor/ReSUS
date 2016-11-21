@@ -1,3 +1,5 @@
+  <h1> Current Role : <%= ValidRole.find_by(id: current_user.role.to_i).id %>  </h1>
+  
   <div class="container-fluid">
       <div class="row">
         <!--Place holder for basic analytics-->
@@ -32,37 +34,22 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>No.</th>
-                  <th>Medical condition</th>
-                  <th>Name</th>
-                  <th>Gender</th>
-                  <th>D.O.B</th>
-                  <th>Quote</th>
-       
+                  <% case ValidRole.find_by(id: current_user.role.to_i).id %>
+                  <% when 1 %>
+                      <%= render 'dashboard/patient_header'%>
+                  <% when 2 %>
+                      <%= render 'dashboard/practitioner_header'%>
+                  <% end %>
                 </tr>
               </thead>
               <tbody>
-                  <!--<td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>-->
-                <% @dashboard.each_with_index do |listing, index| %>
-                    <% current_patient = PatientProfile.find_by(id: listing.patient.id) %>
+                  <% case ValidRole.find_by(id: current_user.role.to_i).id %>
+                  <% when 1 %>
+                      <%= render 'dashboard/patient_data'%>
+                  <% when 2 %>
+                      <%= render 'dashboard/practitioner_data'%>
+                  <% end %>
 
-                <tr>
-                    <td> <%= index + 1 %> </td>
-                    <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
-                    <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
-                    <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-                    <td> <%= current_patient.date_of_birth %> </td>
-                    <td> <button type="button" class="btn btn-default">Quote</button></td>
-                </tr>
-                <% end%>
-
-
-                </tr>
-         
               </tbody>
             </table>
           </div>
