@@ -1,13 +1,19 @@
-<% @dashboard.each_with_index do |listing, index| %>
+<% @dashboard.each_with_index do |quote, index| %>
+    <% listing = Listing.find_by(id: quote.listing.id) %>
     <% current_patient = PatientProfile.find_by(id: listing.patient.id) %>
+
 
 <tr>
     <td> <%= index + 1 %> </td>
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> <%= current_patient.date_of_birth %> </td>
-    <td> Quote status placeholder</td>
+    <td> <%= quote.quote_cost %> </td>
+
+    <% button_text_quote = 'Review' %>
+    <% button_text_quote = 'Pending' if quote.quote_cost.nil? || quote.quote_cost == 0  %>
+
+    <td><%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+    <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
 <% end%>
-
