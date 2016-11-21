@@ -1,7 +1,9 @@
-  <h1> Current Role : <%= ValidRole.find_by(id: current_user.role.to_i).name %>  </h1>
+  <div class="container">
   
-  <div class="container-fluid">
+  
       <div class="row">
+  <!--to be removed-->
+      <h1> Current Role : <%= ValidRole.find_by(id: current_user.role.to_i).name %>  </h1>
         <!--Place holder for basic analytics-->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
