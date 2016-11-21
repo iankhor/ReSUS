@@ -182,4 +182,20 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "experiments", "blood_types"
+  add_foreign_key "listings", "medical_conditions"
+  add_foreign_key "listings", "users", column: "patient_id"
+  add_foreign_key "patient_profiles", "allergies"
+  add_foreign_key "patient_profiles", "blood_types"
+  add_foreign_key "patient_profiles", "ethnicities"
+  add_foreign_key "patient_profiles", "genders"
+  add_foreign_key "patient_profiles", "marital_statuses"
+  add_foreign_key "patient_profiles", "regions"
+  add_foreign_key "patient_profiles", "users"
+  add_foreign_key "practitioner_profiles", "genders"
+  add_foreign_key "practitioner_profiles", "regions"
+  add_foreign_key "practitioner_profiles", "specialties"
+  add_foreign_key "practitioner_profiles", "users"
+  add_foreign_key "quotes", "listings"
+  add_foreign_key "quotes", "users", column: "practitioner_id"
 end
