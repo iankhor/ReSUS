@@ -1,0 +1,68 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">ReSUS, healthcare for everyone</a>
+      
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if user_signed_in? %>
+                        <% case current_user.role.to_i %>
+                        <% when 1 %>
+                            <% current_profile = PatientProfile.find_by(id: current_user.id) %>%
+                        <% when 2 %>
+                            <% current_profile = PractitionerProfile.find_by(id: current_user.id) %>
+                        <% end %>
+
+                        <% if not current_profile.nil? %>
+                            <li><%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
+                        <% end  %>
+                        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+
+                    <% else %>
+                        <li><%= link_to 'New User', new_user_registration_path %></li>
+                        <li><%= link_to 'Log in', new_user_session_path %></li>
+                    <% end %>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1>ReSUS. The place where patients and medical practitioners meet!</h1>
+                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start now for better health!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <%= image_tag 'demo-screen-1.jpg', class: 'img-responsive' %>
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
