@@ -7,6 +7,6 @@
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
     <td> <%= current_patient.date_of_birth %> </td>
-    <td> <button type="button" class="btn btn-default">Quote</button></td>
+    <td> Quote status placeholder</td>
 </tr>
 <% end%>
