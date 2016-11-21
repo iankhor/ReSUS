@@ -9,7 +9,11 @@
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
     <td> <%= quote.quote_cost %> </td>
-    <td><%= button_to 'Quote', edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>
+
+    <% button_text_quote = 'Update' %>
+    <% button_text_quote = 'Quote' if quote.quote_cost.nil? || quote.quote_cost == 0  %>
+
+    <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
     <td><%= button_to 'See listing', listing_path(id: quote.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
 <% end%>
