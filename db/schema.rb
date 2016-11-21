@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20161120220134) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "medical_condition_id"
     t.integer  "patient_id"
+    t.integer  "medical_condition_id"
     t.string   "comments"
     t.string   "photo_medical_data"
     t.datetime "created_at",           null: false
@@ -133,9 +133,9 @@ ActiveRecord::Schema.define(version: 20161120220134) do
   end
 
   create_table "quotes", force: :cascade do |t|
-    t.integer  "quote_cost"
     t.integer  "practitioner_id"
     t.integer  "listing_id"
+    t.integer  "quote_cost"
     t.string   "comments"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

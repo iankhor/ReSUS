@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Practitioner ID:</strong>
+  <%= @quote.practitioner.id %>
+</p>
+
+<p>
+  <strong>Practitioner Name:</strong>
+  <%= PractitionerProfile.find_by(id: @quote.practitioner.id) + ' ' + PractitionerProfile.find_by(id: @quote.practitioner.id) %>
+</p>
+
+<p>
+  <strong>Quoted for listing:</strong>
+  <%= @quote.listing.id %>
+</p>
+
+<p>
   <strong>Quote cost:</strong>
   <%= @quote.quote_cost %>
 </p>
 
-<p>
-  <strong>Practitioner:</strong>
-  <%= @quote.practitioner %>
-</p>
 
-<p>
-  <strong>Listing:</strong>
-  <%= @quote.listing %>
-</p>
 
 <p>
   <strong>Comments:</strong>

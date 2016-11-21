@@ -25,6 +25,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
+    @quote.practitioner_id = current_user.id
 
     respond_to do |format|
       if @quote.save

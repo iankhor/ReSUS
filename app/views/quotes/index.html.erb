@@ -5,20 +5,28 @@
 <table>
   <thead>
     <tr>
+      <th>Practitioner Profile ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Quoted for listing ID</th>
+      <th>Medical condition</th>
       <th>Quote cost</th>
-      <th>Practitioner</th>
-      <th>Listing</th>
       <th>Comments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+  
     <% @quotes.each do |quote| %>
       <tr>
-        <td><%= quote.quote_cost %></td>
-        <td><%= quote.practitioner %></td>
-        <td><%= quote.listing %></td>
+        <% practitioner_profile = PractitionerProfile.find_by(user_id: quote.practitioner.id) %>
+        <% listing = Listing.find_by(id: quote.listing.id) %>
+        <td><%= practitioner_profile.id %></td>
+        <td><%= practitioner_profile.first_name %></td>
+        <td><%= practitioner_profile.last_name%></td>
+        <td><%= listing.id %></td>
+        <td><%= MedicalCondition.find(listing.medical_condition.id).name %></td>
         <td><%= quote.comments %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) %></td>

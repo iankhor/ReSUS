@@ -154,7 +154,7 @@ Listing.create([
 
     {
         patient:                patient2_user,
-        medical_condition:      MedicalCondition.find(4),
+        medical_condition:      MedicalCondition.find(7),
         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
         photo_medical_data:     "some link 3"
     }
@@ -196,23 +196,42 @@ PractitionerProfile.create!([
   }
 ])
 
-    #   t.references :gender, foreign_key: true
-    #   t.references :region, foreign_key: true
-    #   t.references :user, foreign_key: true
-    #   t.string :registration_number
-    #   t.string :first_name
-    #   t.string :last_name
-    #   t.references :specialty, foreign_key: true
+Quote.create([
+    {
+        practitioner:      practitioner_user,
+        quote_cost:        2000 ,
+        listing:           Listing.find(4),
+        comments:          "Mou Duk Gou "
+    },
+
+        {
+        practitioner:      practitioner2_user,
+        quote_cost:        2000 ,
+        listing:           Listing.find(3),
+        comments:          "Mou Duk Gou "
+    },
+
+        {
+        practitioner:      practitioner2_user,
+        quote_cost:        2000 ,
+        listing:           Listing.find(2),
+        comments:          "Mou Duk Gou "
+    },
+
+    {
+        practitioner:      practitioner_user,
+        quote_cost:        2000 ,
+        listing:           Listing.find(1),
+        comments:          "Mou Duk Gou "
+    },
+
+    {
+        practitioner:      practitioner2_user,
+        quote_cost:        2000 ,
+        listing:           Listing.find(1),
+        comments:          "Mou Duk Gou "
+    }
 
 
-# Quote.create([
-#     {
-#         quote_cost:        practitioner_user,
-#         practitioner:      
-#         listing:           "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-#         comments:          "Mou Duk Gou "
-#     }
-
-
-# ])
+])
 
