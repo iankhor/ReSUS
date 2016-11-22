@@ -27,5 +27,12 @@
   <%= @quote.comments %>
 </p>
 
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Payment for [placeholder]" 
+        data-amount=@quote.quote_cost
+        data-locale="aud">
+</script>
+
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', dashboard_index_path %>
