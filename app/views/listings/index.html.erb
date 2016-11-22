@@ -20,8 +20,8 @@
     <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.patient.id %></td>
-        <td><%= PatientProfile.find(listing.patient.id).first_name %></td>
-        <td><%= PatientProfile.find(listing.patient.id).last_name %></td>
+        <td><%= PatientProfile.find_by(user_id: listing.patient.id).first_name %></td>
+        <td><%= PatientProfile.find_by(user_id: listing.patient.id).last_name %></td>
         <td><%= listing.medical_condition.id %></td>
         <td><%= MedicalCondition.find(listing.medical_condition.id).name %></td>
         <td><%= listing.comments %></td>

@@ -17,7 +17,7 @@
 
 <p>
   <strong>Patient name:</strong>
-  <%= PatientProfile.find(@listing.patient.id).first_name + ' ' + PatientProfile.find(@listing.patient.id).last_name %>
+  <%= PatientProfile.find_by(user_id: @listing.patient.id).first_name + ' ' + PatientProfile.find_by(user_id: @listing.patient.id).last_name %>
 </p>
 
 <p>
