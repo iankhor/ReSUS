@@ -201,35 +201,40 @@ Quote.create([
         practitioner:      practitioner_user,
         quote_cost:        2000 ,
         listing:           Listing.find(4),
-        comments:          "Mou Duk Gou "
+        comments:          "Mou Duk Gou ",
+        payment_status:    'Paid'
     },
 
         {
         practitioner:      practitioner2_user,
         quote_cost:        3000 ,
         listing:           Listing.find(3),
-        comments:          "Mou Duk Gou "
+        comments:          "Mou Duk Gou ",
+        payment_status:    'Pending'
     },
 
         {
         practitioner:      practitioner2_user,
         quote_cost:        4000 ,
         listing:           Listing.find(2),
-        comments:          "Mou Duk Gou "
+        comments:          "Mou Duk Gou ",
+        payment_status:    'Paid'
     },
 
     {
         practitioner:      practitioner_user,
         quote_cost:        5000 ,
         listing:           Listing.find(1),
-        comments:          "Mou Duk Gou "
+        comments:          "Mou Duk Gou ",
+        payment_status:    'Paid'
     },
 
     {
         practitioner:      practitioner2_user,
         quote_cost:        9000 ,
         listing:           Listing.find(1),
-        comments:          "Mou Duk Gou "
+        comments:          "Mou Duk Gou ",
+        payment_status:    'Pending'
     }
 
 

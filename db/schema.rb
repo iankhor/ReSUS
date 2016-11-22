@@ -159,18 +159,6 @@ ActiveRecord::Schema.define(version: 20161122034823) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
-    t.integer  "listing_id"
-    t.string   "review_title"
-    t.string   "review_content"
-    t.integer  "rating"
-    t.integer  "amount"
-    t.string   "stripe_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["listing_id"], name: "index_transactions_on_listing_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -211,5 +199,4 @@ ActiveRecord::Schema.define(version: 20161122034823) do
   add_foreign_key "practitioner_profiles", "users"
   add_foreign_key "quotes", "listings"
   add_foreign_key "quotes", "users", column: "practitioner_id"
-  add_foreign_key "transactions", "listings"
 end

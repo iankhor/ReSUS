@@ -9,11 +9,18 @@
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
     <td> <%= quote.quote_cost %> </td>
+    <!--<td> <#%= quote.payment_status %> </td>-->
 
-    <% button_text_quote = 'Review quote' %>
-    <% button_text_quote = 'Pending' if quote.quote_cost.nil? || quote.quote_cost == 0  %>
+    <% if quote.payment_status == 'Paid' %>
+        <% button_text_quote = 'Paid' %>
+        <td><div class='btn btn-default'> PAID </div> </td>  
 
-    <td><%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+    <% else %>
+        <% button_text_quote = 'Review quote' %>
+        <td><%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+
+    <% end %>
+
     <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
 <% end%>
