@@ -54,8 +54,6 @@ gem 'will_paginate'
 
 gem 'chosen-rails'
 
-gem 'chosen-rails'
-
 gem 'jquery-turbolinks'
 
 group :development, :test do
