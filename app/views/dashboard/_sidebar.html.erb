@@ -3,7 +3,7 @@
           
             <li><%= link_to 'Dashboard', dashboard_index_path %></li>
 
-
+            <li><%= link_to 'Your Conversations', conversations_path %></li>
             <% case current_user.role.to_i %>
             <% when 1 %> 
                 <% patient = PatientProfile.find_by(user_id: current_user.id) %>
@@ -15,7 +15,9 @@
                <li><a href="#">Place quote</a></li>
             <% end %>
 
-            <li><%= link_to 'Your Conversations', conversations_path %></li>
+
+
+            
 
 
 

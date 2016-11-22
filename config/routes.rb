@@ -6,8 +6,19 @@ Rails.application.routes.draw do
   resources :experiments
   resources :dashboard
   resources :charges
-  resources :conversations, only: [:index, :show, :destroy]
+  
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+    collection do
+      delete :empty_trash
+    end
+  end
   resources :messages, only: [:new, :create]
+  
   root 'home#index'
   devise_for :users, controllers: { registrations: "registrations" }
 
