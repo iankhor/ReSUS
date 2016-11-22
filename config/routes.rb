@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :patient_profiles
   resources :experiments
   resources :dashboard
+  resources :charges
   root 'home#index'
   devise_for :users, controllers: { registrations: "registrations" }
 
