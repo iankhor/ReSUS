@@ -5,6 +5,8 @@
 
 <tr>
     <td> <%= index + 1 %> </td>
+    <td> <%= 1 %> </td>
+
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>

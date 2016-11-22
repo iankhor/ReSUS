@@ -1,8 +1,23 @@
 <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Placeholder</a></li>
-            <li><a href="#">Placeholder</a></li>
-            <li><a href="#">Placeholder</a></li>
+          
+            <li><%= link_to 'Dashboard', dashboard_index_path %></li>
+
+
+            <% case current_user.role.to_i %>
+            <% when 1 %> 
+                <% patient = PatientProfile.find_by(user_id: current_user.id) %>
+               <li><%= link_to 'Update details' , edit_patient_profile_path(patient) %></li>
+               <li><a href="#">Place listing</a></li>
+            <% when 2 %> 
+                <% practitioner = PractitionerProfile.find_by(user_id: current_user.id) %>
+              <li><%= link_to 'Update details' , edit_practitioner_profile_path(practitioner) %></li>
+               <li><a href="#">Place quote</a></li>
+            <% end %>
+
+
+
+
           </ul>
 </div>
+
