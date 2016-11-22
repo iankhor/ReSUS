@@ -5,7 +5,7 @@ end
 
 def create
   # Amount in cents
-  @amount = 2000
+  @amount = params[:amount]
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -18,6 +18,8 @@ def create
     :description => 'Rails Stripe customer',
     :currency    => 'aud'
   )
+
+  redirect_to dashboard_index_path
 
 rescue Stripe::CardError => e
   flash[:error] = e.message

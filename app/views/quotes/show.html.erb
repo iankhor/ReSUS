@@ -7,7 +7,7 @@
 
 <p>
   <strong>Practitioner Name:</strong>
-  <%= PractitionerProfile.find_by(user_id: @quote.practitioner.id).first_name + ' ' + PractitionerProfile.find_by(user_id: @quote.practitioner.id).last_name %>
+  <%= practitioner_name = PractitionerProfile.find_by(user_id: @quote.practitioner.id).first_name + ' ' + PractitionerProfile.find_by(user_id: @quote.practitioner.id).last_name %>
 </p>
 
 <p>
@@ -27,12 +27,28 @@
   <%= @quote.comments %>
 </p>
 
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="Payment for [placeholder]" 
-        data-amount=@quote.quote_cost
-        data-locale="aud">
-</script>
 
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', dashboard_index_path %>
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <% number_to_currency(@quote.quote_cost) %></span>
+    </label>
+  </article>
+
+  <%= hidden_field_tag(:amount , @quote.quote_cost) %>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= @quote.quote_cost %>"
+          data-locale="aud"></script>
+<% end %>
+
