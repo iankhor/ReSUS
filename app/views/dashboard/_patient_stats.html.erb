@@ -1,22 +1,39 @@
+<% case current_user.role.to_i %>
+<% when 1 %> 
+    <% profile = PatientProfile.find_by(user_id: current_user.id) %>
+<% when 2 %> 
+    <% profile = PractitionerProfile.find_by(user_id: current_user.id) %>
+<% end %>
+
+
+
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="http://cdn3-www.comingsoon.net/assets/uploads/gallery/doctor-strange-1403135280/screen-shot-2016-04-06-at-10-35-22-am.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+        <%= image_tag profile.photo_url, width: 200 , height: 200 , class: "img-responsive"%>
         <h4>Photo</h4>
         <span class="text-muted">Photos</span>
     </div>
 
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+        <div class="dashboard-stats">  
+            <%= Listing.where(patient_id: current_user.id).count %>
+        </div>
         <h4>listing(s)</h4>
         <span class="text-muted">listing(s)</span>
     </div>
+
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+        <div class="dashboard-stats">  
+            X
+        </div>
         <h4>completed</h4>
         <span class="text-muted">completed</span>
     </div>
+
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+        <div class="dashboard-stats">  
+            X
+        </div>
         <h4>reviews</h4>
         <span class="text-muted">reviews</span>
     </div>
@@ -25,3 +42,4 @@
 </div>
 
 <h2 class="sub-header">Patient listings</h2>
+
