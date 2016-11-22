@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120220134) do
+ActiveRecord::Schema.define(version: 20161122034823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.string   "comments"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "payment_status"
     t.index ["listing_id"], name: "index_quotes_on_listing_id", using: :btree
     t.index ["practitioner_id"], name: "index_quotes_on_practitioner_id", using: :btree
   end
@@ -156,6 +157,18 @@ ActiveRecord::Schema.define(version: 20161120220134) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.string   "review_title"
+    t.string   "review_content"
+    t.integer  "rating"
+    t.integer  "amount"
+    t.string   "stripe_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["listing_id"], name: "index_transactions_on_listing_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -198,4 +211,5 @@ ActiveRecord::Schema.define(version: 20161120220134) do
   add_foreign_key "practitioner_profiles", "users"
   add_foreign_key "quotes", "listings"
   add_foreign_key "quotes", "users", column: "practitioner_id"
+  add_foreign_key "transactions", "listings"
 end
