@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+    layout 'dashboard'
 
     def index
         case current_user.role.to_i

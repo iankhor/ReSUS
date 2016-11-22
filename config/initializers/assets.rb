@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( new-age.min.css )
 Rails.application.config.assets.precompile += %w( new-age.min.js )
+Rails.application.config.assets.precompile += %w( dashboard.css )
