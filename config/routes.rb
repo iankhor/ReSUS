@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :experiments
   resources :dashboard
   resources :charges
+  resources :conversations, only[:index, :show, :destroy]
   root 'home#index'
   devise_for :users, controllers: { registrations: "registrations" }
 
