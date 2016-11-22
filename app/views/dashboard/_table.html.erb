@@ -1,0 +1,21 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <% case ValidRole.find_by(id: current_user.role.to_i).id %>
+        <% when 1 %>
+            <%= render 'dashboard/patient_header'%>
+        <% when 2 %>
+            <%= render 'dashboard/practitioner_header'%>
+        <% end %>
+    </tr>
+    </thead>
+    <tbody>
+        <% case ValidRole.find_by(id: current_user.role.to_i).id %>
+        <% when 1 %>
+            <%= render 'dashboard/patient_data'%>
+        <% when 2 %>
+            <%= render 'dashboard/practitioner_data'%>
+        <% end %>
+
+    </tbody>
+</table>

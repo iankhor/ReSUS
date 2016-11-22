@@ -1,0 +1,6 @@
+<% case ValidRole.find_by(id: current_user.role.to_i).id %>
+        <% when 1 %>
+            <%= render 'dashboard/patient_stats'%>
+        <% when 2 %>
+            <%= render 'dashboard/practitioner_stats'%>
+<% end %>
