@@ -1,6 +1,5 @@
   <div class="container">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">We can't wait to have you join us!</h2>
+    <h2>We can't wait to have you join us!</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -28,5 +27,4 @@
     <% end %>
     <%= render "devise/shared/links" %>
 
-     </form>
 </div>
