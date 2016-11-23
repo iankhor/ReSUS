@@ -30,3 +30,9 @@ color: black
 .navbar-default .nav > li.active > a {
 color: hotpink
 }
+
+.btn-primary {
+
+background-color: hotpink;
+border-color: hotpink
+}
