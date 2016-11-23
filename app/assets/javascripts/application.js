@@ -17,3 +17,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('theModal').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData();
+});
