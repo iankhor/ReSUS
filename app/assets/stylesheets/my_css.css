@@ -1,5 +1,5 @@
 .navbar-default {
-background-color: lightslategray;
+background-color: transparent;
 border: 1px solid slategrey;
 
 }
@@ -11,4 +11,22 @@ border: 1px solid slategrey;
     width: 150px;
     height: 200px; 
     font-size: 5em;
+}
+
+.navbar-default .nav > li > a {
+color: black
+    
+}
+
+.navbar-header .navbar-brand {
+color: black
+
+}
+
+.navbar-default .navbar-header .navbar-brand {
+color: black
+}
+
+.navbar-default .nav > li.active > a {
+color: hotpink
 }

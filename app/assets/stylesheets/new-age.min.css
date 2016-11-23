@@ -99,7 +99,7 @@ p {
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #fdcc52 !important;
+  color: hotpink !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active > a:hover,
