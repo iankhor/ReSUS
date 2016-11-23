@@ -8,7 +8,7 @@ border: 1px solid slategrey;
     border-radius: 50%;
     border: 2px solid slategrey;
     padding:20px; 
-    widows: 150px;
-    height: 150px; 
+    width: 150px;
+    height: 200px; 
     font-size: 5em;
 }

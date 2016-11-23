@@ -39,7 +39,14 @@
                             <% case current_user.role.to_i %>
                             <% when 1 %> 
                                 <% patient = PatientProfile.find_by(user_id: current_user.id) %>
-                            <li><%= link_to 'Update details' , edit_patient_profile_path(patient) %></li>
+                            <!--<li><#%= link_to 'Update details' , edit_patient_profile_path(patient) %></li>-->
+
+                            <li><!-- Trigger Link for modal -->
+                                <a href= <%= edit_patient_profile_path(patient) %>  data-target="#theModal" data-toggle="modal">Profile</a>
+                            </li>
+
+
+
                             <li><a href="#">Place listing</a></li>
                             <% when 2 %> 
                                 <% practitioner = PractitionerProfile.find_by(user_id: current_user.id) %>
