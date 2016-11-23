@@ -74,3 +74,13 @@ float: none;
 display: table-cell;
 vertical-align: top;
 }
+
+.main-footer-copyright {
+font-size: 10px;
+margin-left:5%;
+}
+
+.main-footer-icons {
+margin-top:10px;
+text-align: center;
+}
