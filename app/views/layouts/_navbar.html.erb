@@ -30,8 +30,11 @@
                 <% case current_user.role.to_i %>
                 <% when 1 %> 
                 <% patient = PatientProfile.find_by(user_id: current_user.id) %>
-                <li><a href= <%= edit_patient_profile_path(patient) %>  data-target="#theModal" data-toggle="modal">Profile</a></li>
-                <li class="divider"></li>
+                
+                <!--display only when page is dashboard-->
+                  <li><a href= <%= edit_patient_profile_path(patient) %>  data-target="#theModal" data-toggle="modal">Profile</a></li>
+                  <li class="divider"></li>
+
                 <li><a href= <%= new_listing_path(patient) %>  data-target="#theModal" data-toggle="modal">Place listing</a></li>
 
                 <% when 2 %> 
