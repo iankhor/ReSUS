@@ -1,3 +1,7 @@
+.resus-title{
+color: #EE2A80
+}
+
 .navbar-default {
 background-color: white;
 border: 1px solid slategrey;
@@ -28,11 +32,20 @@ color: black
 }
 
 .navbar-default .nav > li.active > a {
-color: hotpink
+color: #EE2A80
 }
 
 .btn-primary {
 
-background-color: hotpink;
-border-color: hotpink
+background-color: #EE2A80;
+border-color: #EE2A80
+}
+
+.main-footer {
+
+width: 100%;
+margin-top: 20px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: slategray
 }
