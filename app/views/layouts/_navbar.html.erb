@@ -22,32 +22,44 @@
 
                         <% if not current_profile.nil? %>
                             <li><%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
-                            <li><%= link_to 'Dashboard', dashboard_index_path  %> </li>
                         <% end  %>
 
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown List <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigation <b class="caret"></b></a>
+
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Type 1</a></li>
-                            <li><a href="#">Type 2</a></li>
-                            <li><a href="#">Type 3</a></li>
+                            <li><%= link_to 'Home', root_path %></li>
+ 
+                            <li class="divider"></li>
+
+                            <li><%= link_to 'Dashboard', dashboard_index_path %></li>
+
+                            <li><%= link_to 'Conversations', conversations_path %></li>
+
+                            <% case current_user.role.to_i %>
+                            <% when 1 %> 
+                                <% patient = PatientProfile.find_by(user_id: current_user.id) %>
+                            <li><%= link_to 'Update details' , edit_patient_profile_path(patient) %></li>
+                            <li><a href="#">Place listing</a></li>
+                            <% when 2 %> 
+                                <% practitioner = PractitionerProfile.find_by(user_id: current_user.id) %>
+                            <li><%= link_to 'Update details' , edit_practitioner_profile_path(practitioner) %></li>
+                            <li><a href="#">Place quote</a></li>
+                            <% end %>
+
+
                             <li class="divider"></li>
                             
-                            <li>            <!-- Trigger the modal with a button -->
+                            <li><!-- Trigger Link for modal -->
                                 <a href= <%= patient_profiles_path %>  data-target="#theModal" data-toggle="modal">EDIT PROFILE</a>
                             </li>
-
-
-
-
-                            
+      
                         </ul>
                         </li>
 
                         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
-                        
-
+ 
                     <% else %>
                         <li><%= link_to 'New User', new_user_registration_path %></li>
                         <li><%= link_to 'Log in', new_user_session_path %></li>
