@@ -20,7 +20,7 @@ class PatientProfilesController < ApplicationController
 
   # GET /patient_profiles/1/edit
   def edit
-    # @profile_profile.photo = 'no_image.png'  if profile.photo?
+
   end 
 
 
