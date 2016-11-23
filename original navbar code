@@ -1,0 +1,71 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">ReSUS, healthcare for everyone</a>
+      
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if user_signed_in? %>
+                        <!--<#% case current_user.role.to_i %>
+                        <#% when 1 %>
+                            <% current_profile = PatientProfile.find_by(user_id: current_user.id) %>
+                        <#% when 2 %>
+                            <% current_profile = PractitionerProfile.find_by(user_id: current_user.id) %>
+                        <#% end %>
+
+                        <#% if not current_profile.nil? %>
+                            <li><#%= link_to 'Welcome, ' + current_profile.first_name + ' !'  %> </li>
+                        <#% end  %>-->
+
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigation <b class="caret"></b></a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+                            <li><%= link_to 'Home', root_path %></li>
+                            <li class="divider"></li>
+                            <!--<li><#%= link_to 'Dashboard', dashboard_index_path %></li>
+                            <li><#%= link_to 'Conversations', conversations_path %></li>-->
+
+                            <% case current_user.role.to_i %>
+                            <% when 1 %> 
+                            <!--<#% patient = PatientProfile.find_by(user_id: current_user.id) %>
+                            <li><a href= <#%= edit_patient_profile_path(patient) %>  data-target="#theModal" data-toggle="modal">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href= <#%= new_listing_path(patient) %>  data-target="#theModal" data-toggle="modal">Place listing</a></li>-->
+
+                            <% when 2 %> 
+                            <!--<#% practitioner = PractitionerProfile.find_by(user_id: current_user.id) %>
+                            <li><a href= <#%= edit_practitioner_profile_path(practitioner)  %>  data-target="#theModal" data-toggle="modal">Profile</a></li>-->
+                            <li class="divider"></li>
+                            <li><a href="#">Place quote</a></li>
+                            <% end %>
+                        </ul>
+                        </li>
+
+                        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+
+ 
+                    <% else %>
+                        <li><%= link_to 'New User', new_user_registration_path %></li>
+                        <li><%= link_to 'Log in', new_user_session_path %></li>
+                    <% end %>
+
+                    
+
+        
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
