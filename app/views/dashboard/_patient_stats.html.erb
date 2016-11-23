@@ -5,11 +5,15 @@
     <% profile = PractitionerProfile.find_by(user_id: current_user.id) %>
 <% end %>
 
-
+<% if profile.photo_url.nil? || profile.photo_url.empty? %>
+    <% photo_to_display = 'no_image.png' %>
+<% else %>
+    <% photo_to_display = profile.photo_url %>
+<% end %>
 
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <%= image_tag profile.photo_url, width: 200 , height: 200 , class: "img-responsive"%>
+        <%= image_tag photo_to_display, width: 200 , height: 200 , class: "img-responsive"%>
         <h4>Photo</h4>
         <span class="text-muted">Photos</span>
     </div>

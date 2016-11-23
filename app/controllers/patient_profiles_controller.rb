@@ -20,7 +20,9 @@ class PatientProfilesController < ApplicationController
 
   # GET /patient_profiles/1/edit
   def edit
-  end
+    # @profile_profile.photo = 'no_image.png'  if profile.photo?
+  end 
+
 
   # POST /patient_profiles
   # POST /patient_profiles.json
@@ -44,7 +46,7 @@ class PatientProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @patient_profile.update(patient_profile_params)
-        format.html { redirect_to @patient_profile, notice: 'Patient profile was successfully updated.' }
+        format.html { redirect_to edit_patient_profile_path(@patient_profile), notice: 'Patient profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @patient_profile }
       else
         format.html { render :edit }

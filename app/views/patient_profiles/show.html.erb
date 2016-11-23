@@ -70,11 +70,10 @@
   <%= @patient_profile.contact_number %>
 </p>
 
-
 <p>
-  <strong>Photo URL:</strong>
+  <strong>Photo :</strong>
   <%= image_tag @patient_profile.photo_url%>
 </p>
 
 <%= link_to 'Edit', edit_patient_profile_path(@patient_profile) %> |
-<%= link_to 'Back', patient_profiles_path %>
+<%= link_to 'Back', dashboard_index_path %>
