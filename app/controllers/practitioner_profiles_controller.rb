@@ -45,7 +45,7 @@ class PractitionerProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @practitioner_profile.update(practitioner_profile_params)
-        format.html { redirect_to @practitioner_profile, notice: 'Practitioner profile was successfully updated.' }
+        format.html { redirect_to edit_patient_profile_path(@practitioner_profile), notice: 'Practitioner profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @practitioner_profile }
       else
         format.html { render :edit }
