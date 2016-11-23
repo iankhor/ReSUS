@@ -60,6 +60,7 @@ Allergy.create([
     { name: 'Sinus Information' }
 ])
 
+
 Gender.create([
     { name: 'Male' },
     { name: 'Female' }

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :listings
   resources :practitioner_profiles
   resources :patient_profiles
-  resources :experiments
   resources :dashboard
   resources :charges
   

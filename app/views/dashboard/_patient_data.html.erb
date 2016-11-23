@@ -1,6 +1,6 @@
 <% @dashboard.each_with_index do |listing, index| %>
     <% current_patient = PatientProfile.find_by(user_id: listing.patient.id) %>
-    <!--<#% quote = Quote.find_by(listing_id: listing.id) %>-->
+    <% quote = Quote.find_by(listing_id: listing.id) %>
 
 <tr>
     <td> <%= index + 1 %> </td>
@@ -9,7 +9,7 @@
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <!--<td> <#%= quote.quote_cost %> </td>-->
+    <td> <%= quote.quote_cost %> </td>
     <!--<td> <#%= quote.payment_status %> </td>-->
 
     <!--<#% if quote.payment_status == 'Paid' %>
