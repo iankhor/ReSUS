@@ -1,7 +1,6 @@
-<% @dashboard.each_with_index do |quote, index| %>
-    <% listing = Listing.find_by(id: quote.listing.id) %>
-    <% current_patient = PatientProfile.find_by(id: listing.patient.id) %>
-
+<% @dashboard.each_with_index do |listing, index| %>
+    <% current_patient = PatientProfile.find_by(user_id: listing.patient.id) %>
+    <!--<#% quote = Quote.find_by(listing_id: listing.id) %>-->
 
 <tr>
     <td> <%= index + 1 %> </td>
@@ -10,18 +9,18 @@
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> <%= quote.quote_cost %> </td>
+    <!--<td> <#%= quote.quote_cost %> </td>-->
     <!--<td> <#%= quote.payment_status %> </td>-->
 
-    <% if quote.payment_status == 'Paid' %>
-        <% button_text_quote = 'Paid' %>
+    <!--<#% if quote.payment_status == 'Paid' %>
+        <#% button_text_quote = 'Paid' %>
         <td><div class='btn btn-default'> PAID </div> </td>  
 
-    <% else %>
-        <% button_text_quote = 'Review quote' %>
-        <td><%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+    <#% else %>
+        <#% button_text_quote = 'Review quote' %>
+        <td><#%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
 
-    <% end %>
+    <#% end %>-->
 
     <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
