@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /quotes
   # GET /quotes.json

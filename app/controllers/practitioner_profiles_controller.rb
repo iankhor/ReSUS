@@ -1,6 +1,6 @@
 class PractitionerProfilesController < ApplicationController
   before_action :set_practitioner_profile, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
 
   # GET /practitioner_profiles
