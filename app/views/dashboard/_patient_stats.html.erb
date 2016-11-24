@@ -29,10 +29,9 @@
 
     <div class="col-xs-6 col-sm-3 placeholder">
         <div class="dashboard-stats">  
-            X
+            <%= Quote.where(payment_status: 'Paid').count %>
         </div>
         <h4>completed</h4>
-        <span class="text-muted">completed</span>
     </div>
 
     <div class="col-xs-6 col-sm-3 placeholder">
@@ -40,7 +39,6 @@
             X
         </div>
         <h4>reviews</h4>
-        <span class="text-muted">reviews</span>
     </div>
 
 
