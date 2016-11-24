@@ -10,10 +10,12 @@
 
     <% if quote.nil? %> 
         <td> <%= "Pending" %> </td>
+        <td> <%= "Pending" %> </td>
         <% button_text_quote = 'Quote' %>
         <td><%= link_to button_text_quote , new_quote_path(listing: listing), class: 'btn btn-default'  %> </td>  
     <% else %>
         <td> <%= quote.quote_cost %> </td>
+        <td> <%= quote.payment_status %> </td>        
         <% button_text_quote = 'Update' %>
         <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
     <% end %>

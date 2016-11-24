@@ -9,6 +9,7 @@
     <% if quote.nil? %> 
         <td> <%= 'Pending' %> </td>
         <td> <%= 'Pending' %> </td>
+        <td> <%= 'Pending' %> </td>
         <% button_text_quote = 'Pending' %>
         <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-default'  %> </td>  
          <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
@@ -17,6 +18,7 @@
                  PractitionerProfile.find_by(user_id: quote.practitioner.id).last_name.humanize %> 
         </td>
         <td> <%= quote.quote_cost %> </td>
+        <td> <%= quote.payment_status %> </td>
         <% button_text_quote = 'Review' %>
         <td><%= link_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
         <td><%= link_to 'X', dashboard_index_path, class: 'btn btn-default'%> </td>
