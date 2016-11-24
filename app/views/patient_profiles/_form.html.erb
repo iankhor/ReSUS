@@ -32,9 +32,8 @@
   </div>
 
   <div class="field">
-    <!--<%= f.label :date_of_birth %>-->
-    <% f.input :date_of_birth, label: "Date of Birth", as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year] %>
-    <!--<%= f.text_field :date_of_birth %>-->
+    <%= f.label :date_of_birth %>
+    <%= f.date_select :date_of_birth %>
   </div>
 
   <div class="field">
