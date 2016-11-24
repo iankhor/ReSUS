@@ -11,7 +11,7 @@
         <td> <%= 'Pending' %> </td>
         <td> <%= 'Pending' %> </td>
         <% button_text_quote = 'Pending' %>
-        <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-default'  %> </td>  
+        <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-warning'  %> </td>  
          <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
     <% else %>
         <td> <%= PractitionerProfile.find_by(user_id: quote.practitioner.id).first_name.humanize +  ' ' + 
@@ -20,7 +20,7 @@
         <td> <%= quote.quote_cost %> </td>
         <td> <%= quote.payment_status %> </td>
         <% button_text_quote = 'Review' %>
-        <td><%= link_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+        <td><%= link_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-success'  %> </td>  
         <td><%= link_to 'Not available',  dashboard_index_path, class: 'btn btn-default'%> </td>
         <!-- this should be show quote-->
     <% end %>
