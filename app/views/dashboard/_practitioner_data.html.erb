@@ -12,7 +12,7 @@
         <td> <%= "Pending" %> </td>
         <td> <%= "Pending" %> </td>
         <% button_text_quote = 'Quote' %>
-        <td><%= link_to button_text_quote , new_quote_path(listing: listing), class: 'btn btn-default'  %> </td>  
+        <td><%= link_to button_text_quote , new_quote_path(listing: listing), class: 'btn btn-success'  %> </td>  
     <% else %>
         <td> <%= quote.quote_cost %> </td>
         <td> <%= quote.payment_status %> </td>        
