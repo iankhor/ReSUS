@@ -24,24 +24,21 @@
         <div class="dashboard-stats">  
             <%= Quote.where(practitioner_id: current_user.id).count %>
         </div>
-        <h4>listing(s)</h4>
-        <span class="text-muted">listing(s)</span>
+        <h4>quote(s) issued</h4>
     </div>
 
     <div class="col-xs-6 col-sm-3 placeholder">
         <div class="dashboard-stats">  
-            X
+            <%= Quote.where(payment_status: 'Paid').count %>
         </div>
         <h4>completed</h4>
-        <span class="text-muted">completed</span>
     </div>
 
     <div class="col-xs-6 col-sm-3 placeholder">
         <div class="dashboard-stats">  
             X
         </div>
-        <h4>reviews</h4>
-        <span class="text-muted">reviews</span>
+        <h4>reviews received</h4>
     </div>
 
 
