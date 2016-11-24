@@ -32,7 +32,7 @@ class PatientProfilesController < ApplicationController
     
     respond_to do |format|
       if @patient_profile.save
-        format.html { redirect_to @patient_profile, notice: 'Patient profile was successfully created.' }
+        format.html { redirect_to dashboard_index_path, notice: 'Patient profile was successfully created.' }
         format.json { render :show, status: :created, location: @patient_profile }
       else
         format.html { render :new }

@@ -11,13 +11,9 @@
 // about supported directives.
 //
 //= require messages
-//= require jquery.turbolinks
 //= require chosen-jquery
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$('theModal').on('hidden.bs.modal', '.modal', function () {
-            $(this).removeData();
-});
