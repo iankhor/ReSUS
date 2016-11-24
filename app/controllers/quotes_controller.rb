@@ -15,6 +15,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @quote.listing_id = params[:listing]
   end
 
   # GET /quotes/1/edit
