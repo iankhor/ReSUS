@@ -12,8 +12,11 @@ class DashboardController < ApplicationController
 
              condition_treated = Seek.find_by(specialty: specialty)
 
-             @dashboard = Listing.where(medical_condition: condition_treated)
-            # @dashboard = Quote.where(practitioner: current_user)
+            # this is not right. the condition needs to be all conditons by that specialty
+            #  @dashboard = Listing.where(medical_condition: condition_treated)
+
+            # currently display all listing for doctors
+             @dashboard = Listing.all
         end
     end
 

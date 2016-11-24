@@ -161,7 +161,7 @@ PatientProfile.create!([
   user:             User.find(1),
   first_name:       'Tony',
   last_name:        'Stark',
-  height:           '8000',
+  height:           '180',
   weight:           '60',
   date_of_birth:    '24/09/1975',
   gender:            Gender.find(1),
@@ -336,41 +336,9 @@ PractitionerProfile.create!([
 
 Quote.create([
     {
-        practitioner:      User.find(5),
-        quote_cost:        1000 ,
-        listing:           Listing.find(1),
-        comments:          "Its fine, surgery would include ...Nisi cillum et ex tempor proident.",
-        payment_status:    'Paid'
-    },
-
-        {
-        practitioner:      User.find(5),
-        quote_cost:        2000 ,
-        listing:           Listing.find(2),
-        comments:          "Its fine, surgery would include ...Nisi cillum et ex tempor proident",
-        payment_status:    'Pending'
-    },
-
-        {
-        practitioner:      User.find(1),
-        quote_cost:        4000 ,
-        listing:           Listing.find(3),
-        comments:          "Incididunt non consequat laborum incididunt excepteur sit ad. Non adipisicing quis cupidatat veniam ad eiusmod exercitation deserunt nulla id sit. Excepteur aute ad aute cillum magna cillum laborum reprehenderit. Aliquip laboris officia incididunt ipsum id velit magna                        occaecat ea dolore. Aute sit adipisicing ut quis aliqua nostrud duis nulla do sint. Excepteur enim dolor reprehenderit Lorem fugiat dolor consectetur excepteur sint culpa proident.",
-        payment_status:    'Paid'
-    },
-
-    {
-        practitioner:      User.find(5),
-        quote_cost:        5000 ,
-        listing:           Listing.find(4),
-        comments:          "Real bad",
-        payment_status:    'Paid'
-    },
-
-    {
-        practitioner:      User.find(6),
+        practitioner:      User.find(6), #ok
         quote_cost:        9000 ,
-        listing:           Listing.find(5),
+        listing:           Listing.find(5), #Lupus
         comments:          "Uncurable but i can try",
         payment_status:    'Pending'
     }
