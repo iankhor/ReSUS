@@ -206,44 +206,44 @@ PatientProfile.create!([
   }
 ])
 
-Listing.create([
-    {
-        patient:                User.find(1),
-        medical_condition:      MedicalCondition.find(1),
-        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-        photo_medical_data:     "some link 1 "
-    },
+# Listing.create([
+#     {
+#         patient:                User.find(1),
+#         medical_condition:      MedicalCondition.find(1),
+#         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         photo_medical_data:     "some link 1 "
+#     },
 
-    {
-        patient:                User.find(1),
-        medical_condition:      MedicalCondition.find(2),
-        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-        photo_medical_data:     "some link 2" 
-    },
+#     {
+#         patient:                User.find(1),
+#         medical_condition:      MedicalCondition.find(2),
+#         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         photo_medical_data:     "some link 2" 
+#     },
 
-    {
-        patient:                User.find(1),
-        medical_condition:      MedicalCondition.find(10),
-        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-        photo_medical_data:     "some link 3"
-    },
+#     {
+#         patient:                User.find(1),
+#         medical_condition:      MedicalCondition.find(10),
+#         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         photo_medical_data:     "some link 3"
+#     },
 
-    {
-        patient:                User.find(2),
-        medical_condition:      MedicalCondition.find(3),
-        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-        photo_medical_data:     "some link 3"
-    },
+#     {
+#         patient:                User.find(2),
+#         medical_condition:      MedicalCondition.find(3),
+#         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         photo_medical_data:     "some link 3"
+#     },
 
-    {
-        patient:                User.find(2),
-        medical_condition:      MedicalCondition.find(7),
-        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
-        photo_medical_data:     "some link 3"
-    }
+#     {
+#         patient:                User.find(2),
+#         medical_condition:      MedicalCondition.find(7),
+#         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+#         photo_medical_data:     "some link 3"
+#     }
 
 
-])
+# ])
 
 
 # practitioner_user = User.create!(
@@ -334,15 +334,15 @@ PractitionerProfile.create!([
   }
 ])
 
-Quote.create([
-    {
-        practitioner:      User.find(6), #ok
-        quote_cost:        9000 ,
-        listing:           Listing.find(5), #Lupus
-        comments:          "Uncurable but i can try",
-        payment_status:    'Pending'
-    }
+# Quote.create([
+#     {
+#         practitioner:      User.find(6), #ok
+#         quote_cost:        9000 ,
+#         listing:           Listing.find(5), #Lupus
+#         comments:          "Uncurable but i can try",
+#         payment_status:    'Pending'
+#     }
 
 
-])
+# ])
 
