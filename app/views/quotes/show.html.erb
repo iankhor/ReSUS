@@ -1,56 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="modal-header"> <!-- modal header -->
+  <button type="button" class="close" data-dismiss="modal">X</button>
 
-<p>
-  <strong>Practitioner ID:</strong>
-  <%= @quote.practitioner.id %>
-</p>
+</div> <!-- modal header -->
 
-<p>
-  <strong>Practitioner Name:</strong>
-  <%= practitioner_name = PractitionerProfile.find_by(user_id: @quote.practitioner.id).first_name + ' ' + PractitionerProfile.find_by(user_id: @quote.practitioner.id).last_name %>
-</p>
+<div class="modal-body"> <!-- modal body -->
 
-<p>
-  <strong>Quoted for listing:</strong>
-  <%= @quote.listing.id %>
-</p>
+      <p>
+        <strong>Practitioner Name:</strong>
+        <%= practitioner_name = PractitionerProfile.find_by(user_id: @quote.practitioner.id).first_name + ' ' + PractitionerProfile.find_by(user_id: @quote.practitioner.id).last_name %>
+      </p>
 
-<p>
-  <strong>Quote cost:</strong>
-  <%= @quote.quote_cost %>
-</p>
+      <p>
+        <strong>Quoted for listing:</strong>
+        <%= @quote.listing.id %>
+      </p>
 
-
-
-<p>
-  <strong>Comments:</strong>
-  <%= @quote.comments %>
-</p>
+      <p>
+        <strong>Quote cost:</strong>
+        <%= @quote.quote_cost %>
+      </p>
 
 
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', dashboard_index_path %>
 
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: <% number_to_currency(@quote.quote_cost) %></span>
-    </label>
-  </article>
+      <p>
+        <strong>Comments:</strong>
+        <%= @quote.comments %>
+      </p>
 
-<!--to pass params to charges controller-->
-  <%= hidden_field_tag(:amount , @quote.quote_cost) %>
-  <%= hidden_field_tag(:quote_id , @quote.id) %>
+      <%= link_to 'Back', dashboard_index_path , class: "btn btn-lg btn-primary btn-block"%>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @quote.quote_cost %>"
-          data-locale="aud"></script>
-<% end %>
+      <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+          <label class="amount">
+            <span>Amount: <% number_to_currency(@quote.quote_cost) %></span>
+          </label>
+        </article>
 
+      <!--to pass params to charges controller-->
+        <%= hidden_field_tag(:amount , @quote.quote_cost) %>
+        <%= hidden_field_tag(:quote_id , @quote.id) %>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="A month's subscription"
+                data-amount="<%= @quote.quote_cost %>"
+                data-locale="aud"></script>
+        <% end %>
+
+</div> <!-- modal body -->
+
+<div class="modal-footer"> <!-- modal footer -->
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div> <!-- modal footer -->
