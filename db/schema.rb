@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123235308) do
+ActiveRecord::Schema.define(version: 20161124055020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20161123235308) do
     t.integer  "specialty_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "photo"
     t.index ["gender_id"], name: "index_practitioner_profiles_on_gender_id", using: :btree
     t.index ["region_id"], name: "index_practitioner_profiles_on_region_id", using: :btree
     t.index ["specialty_id"], name: "index_practitioner_profiles_on_specialty_id", using: :btree

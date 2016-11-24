@@ -1,6 +1,19 @@
+<div class="modal-header"> <!-- modal header -->
+  <button type="button" class="close" data-dismiss="modal">X</button>
+
+</div> <!-- modal header -->
+
+<div class="modal-body"> <!-- modal body -->
+
 <h1>Editing Practitioner Profile</h1>
 
 <%= render 'form', practitioner_profile: @practitioner_profile %>
 
 <%= link_to 'Show', @practitioner_profile %> |
 <%= link_to 'Back', dashboard_index_path %>
+
+</div> <!-- modal body -->
+
+<div class="modal-footer"> <!-- modal footer -->
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div> <!-- modal footer -->

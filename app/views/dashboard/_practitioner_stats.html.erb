@@ -1,24 +1,50 @@
+<% case current_user.role.to_i %>
+<% when 1 %> 
+    <% profile = PatientProfile.find_by(user_id: current_user.id) %>
+<% when 2 %> 
+    <% profile = PractitionerProfile.find_by(user_id: current_user.id) %>
+<% end %>
+
+<% if profile.photo_url.nil? || profile.photo_url.empty? %>
+    <% photo_to_display = 'no_image.png' %>
+<% else %>
+    <% photo_to_display = profile.photo_url %>
+<% end %>
+
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>quote(s)</h4>
-        <span class="text-muted">quote(s)</span>
+        <%= image_tag photo_to_display, width: 200 , height: 200 , class: "img-responsive"%>
+        <h4><%= profile.first_name.humanize + ' ' + profile.last_name.humanize%></h4>
+        <span class="text-muted"><% profile.registration_number %></span>
+        <span class="text-muted"><%=Specialty.find_by(id: profile.specialty.id).name%></span>
     </div>
+
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+        <div class="dashboard-stats">  
+            <%= Listing.where(patient_id: current_user.id).count %>
+        </div>
+        <h4>listing(s)</h4>
+        <span class="text-muted">listing(s)</span>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <div class="dashboard-stats">  
+            X
+        </div>
         <h4>completed</h4>
         <span class="text-muted">completed</span>
     </div>
+
     <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>rating</h4>
-        <span class="text-muted">rating</span>
+        <div class="dashboard-stats">  
+            X
+        </div>
+        <h4>reviews</h4>
+        <span class="text-muted">reviews</span>
     </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>placeholder</h4>
-        <span class="text-muted">placeholder</span>
-    </div>
+
+
 </div>
 
-<h2 class="sub-header">Practitioner quotes</h2>
+<h2 class="sub-header">Patient listings</h2>
+

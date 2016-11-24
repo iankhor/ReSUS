@@ -4,9 +4,21 @@
     <title>Resus - Dashboard</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Custom Fonts -->
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Muli' %>
+
+    <!-- Plugin CSS -->
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+
+
     <!-- Bootstrap core CSS -->
-    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
-        <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
 
      <!-- Custom styles for this template -->
     <%= stylesheet_link_tag 'new-age.min.css' %>

@@ -9,6 +9,9 @@
     <%= f.association :specialty, collection: Specialty.all, value_method: :id %>
     <%= f.association :gender, collection: Gender.all, value_method: :id %>
     <%= f.association :region, collection: Region.all, value_method: :id %>
+    <%= image_tag practitioner_profile.photo_url%>
+    <p>Upload photo</p>
+    <%= f.input :photo, as: :file%>
   </div>
 
   <div class="form-actions">
