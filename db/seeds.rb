@@ -19,7 +19,6 @@ BloodType.create([
 ])
 
 MedicalCondition.create([
-    {   name: 'Not sure' },
     {   name: 'Aortic surgery'},
     {   name: 'Cardiac surgery'},
     {   name: 'Thoracic Surgery'},

@@ -14,14 +14,16 @@
         <td> <%= "Pending" %> </td>
         <% button_text_quote = 'Pending' %>
         <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-default'  %> </td>  
+         <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
     <% else %>
         <td> <%= quote.quote_cost %> </td>
-        <% button_text_quote = 'Update' %>
-        <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+        <% button_text_quote = 'Review' %>
+        <td><%= link_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+        <td><%= link_to 'X', dashboard_index_path, class: 'btn btn-default'%> </td>
         <!-- this should be show quote-->
     <% end %>
 
 
-    <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
+
 </tr>
 <% end%>
