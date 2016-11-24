@@ -26,19 +26,23 @@ MedicalCondition.create([
     {   name: 'Knee surgery or replacement'},
     {   name: 'Tendonitis'},
     {   name: 'Lupus'},
-    {   name: 'Gout'}
+    {   name: 'Gout'},
+    {   name: 'Sclerosis'},
+    {   name: 'Spinal Cord Tumor'}
 ])
 
 
 Specialty.create([
     {   name: 'Cardiothoracic Surgery'},
     {   name: 'Orthopedics'},
-    {   name: 'Rheumatologyy'}
+    {   name: 'Rheumatologyy'},
+    {   name: 'Neurology'}
 ])
 
 specialty_1 = Specialty.find(1)
 specialty_2 = Specialty.find(2)
 specialty_3 = Specialty.find(3)
+specialty_4 = Specialty.find(4)
 
 condition_1 = MedicalCondition.find(1)
 condition_2 = MedicalCondition.find(2)
@@ -48,6 +52,8 @@ condition_5 = MedicalCondition.find(5)
 condition_6 = MedicalCondition.find(6)
 condition_7 = MedicalCondition.find(7)
 condition_8 = MedicalCondition.find(8)
+condition_9 = MedicalCondition.find(9)
+condition_10 = MedicalCondition.find(10)
 
 # Cardiothoracic
 specialty_1.seeks.create(medical_condition: condition_1)
@@ -63,6 +69,9 @@ specialty_2.seeks.create(medical_condition: condition_6)
 specialty_3.seeks.create(medical_condition: condition_7)
 specialty_3.seeks.create(medical_condition: condition_8)
 
+# Rheumatologyy
+specialty_4.seeks.create(medical_condition: condition_9)
+specialty_4.seeks.create(medical_condition: condition_10)
 
 MaritalStatus.create([
     { name: 'Single' },
@@ -110,29 +119,52 @@ ValidRole.create([
     { name: 'I want to help' }
 ])
 
-patient_user = User.create!(
-  email: 'ian@ian.com',
-  password: '123123',
-  password_confirmation: '123123',
-  role: '1'
-)
+# patient_user = User.create!(
+#   email: 'tony@marvel.com',
+#   password: '123123',
+#   password_confirmation: '123123',
+#   role: '1'
+# )
 
-patient2_user = User.create!(
-  email: 'jack@jack.com',
-  password: '123123',
-  password_confirmation: '123123',
-  role: '1'
-)
+# patient2_user = User.create!(
+#   email: 'steve@marvel.com',
+#   password: '123123',
+#   password_confirmation: '123123',
+#   role: '1'
+# )
+
+User.create!([
+    {
+        email: 'tony@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '1'
+    },
+
+    {
+        email: 'steve@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '1'
+    },
+
+    {
+        email: 'hank@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '1'
+    }
+])
 
 PatientProfile.create!([
   {
-  user:             patient_user,
-  first_name:       'ian',
-  last_name:        'khor',
-  height:           '312',
-  weight:           '123',
-  date_of_birth:    '555',
-  gender:            Gender.find(2),
+  user:             User.find(1),
+  first_name:       'Tony',
+  last_name:        'Stark',
+  height:           '8000',
+  weight:           '60',
+  date_of_birth:    '24/09/1975',
+  gender:            Gender.find(1),
   region:            Region.find(2),
   ethnicity:         Ethnicity.find(2),
   blood_type:        BloodType.find(2),
@@ -142,13 +174,13 @@ PatientProfile.create!([
   },
 
  {
-  user:             patient2_user,
-  first_name:       'jack',
-  last_name:        'saw',
-  height:           '312',
-  weight:           '123',
-  date_of_birth:    '555',
-  gender:            Gender.find(2),
+  user:             User.find(2),
+  first_name:       'Steve',
+  last_name:        'Roger',
+  height:           '200',
+  weight:           '98',
+  date_of_birth:    '24/9/1945',
+  gender:            Gender.find(1),
   region:            Region.find(3),
   ethnicity:         Ethnicity.find(3),
   blood_type:        BloodType.find(6),
@@ -156,112 +188,190 @@ PatientProfile.create!([
   allergy:           Allergy.find(2),
   contact_number:   '000'
   },
+
+  {
+  user:             User.find(3),
+  first_name:       'Hank',
+  last_name:        'Pymm',
+  height:           '200',
+  weight:           '98',
+  date_of_birth:    '24/9/1945',
+  gender:            Gender.find(1),
+  region:            Region.find(3),
+  ethnicity:         Ethnicity.find(3),
+  blood_type:        BloodType.find(6),
+  marital_status:    MaritalStatus.find(2),
+  allergy:           Allergy.find(2),
+  contact_number:   '000'
+  }
 ])
 
 Listing.create([
     {
-        patient:                patient2_user,
-        medical_condition:      MedicalCondition.find(2),
+        patient:                User.find(1),
+        medical_condition:      MedicalCondition.find(1),
         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
         photo_medical_data:     "some link 1 "
     },
 
     {
-        patient:                patient_user,
-        medical_condition:      MedicalCondition.find(5),
+        patient:                User.find(1),
+        medical_condition:      MedicalCondition.find(2),
         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
         photo_medical_data:     "some link 2" 
     },
 
     {
-        patient:                patient_user,
-        medical_condition:      MedicalCondition.find(4),
+        patient:                User.find(1),
+        medical_condition:      MedicalCondition.find(10),
         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
         photo_medical_data:     "some link 3"
     },
 
     {
-        patient:                patient2_user,
+        patient:                User.find(2),
+        medical_condition:      MedicalCondition.find(3),
+        comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
+        photo_medical_data:     "some link 3"
+    },
+
+    {
+        patient:                User.find(2),
         medical_condition:      MedicalCondition.find(7),
         comments:               "Lorem est irure cupidatat ex ipsum anim culpa est laborum.",
         photo_medical_data:     "some link 3"
     }
 
+
 ])
 
 
-practitioner_user = User.create!(
-  email: 'ws@ws.com',
-  password: '123123',
-  password_confirmation: '123123',
-  role: '2'
-)
+# practitioner_user = User.create!(
+#   email: 'drstrange@marvel.com',
+#   password: '123123',
+#   password_confirmation: '123123',
+#   role: '2'
+# )
 
-practitioner2_user = User.create!(
-  email: 'lk@lk.com',
-  password: '123123',
-  password_confirmation: '123123',
-  role: '2'
-)
+# practitioner2_user = User.create!(
+#   email: 'thor@marvel.com',
+#   password: '123123',
+#   password_confirmation: '123123',
+#   role: '2'
+# )
+
+User.create!([
+    {
+        email: 'drstrange@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '2'
+    },
+
+    {
+        email: 'thor@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '2'
+    },
+
+    {
+        email: 'hulk@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '2'
+    },
+
+    {
+        email: 'reed@marvel.com',
+        password: '123123',
+        password_confirmation: '123123',
+        role: '2'
+    }
+])
+
+
 
 PractitionerProfile.create!([
   {
-  user:             practitioner_user,
-  first_name:       'wei',
-  last_name:        'shen',
+  user:             User.find(4),
+  first_name:       'Stephen',
+  last_name:        'Strange',
   gender:            Gender.find(1),
   region:            Region.find(2),
-  specialty:         Specialty.find(3)   
+  specialty:         Specialty.find(4),
+  registration_number: 'MEDREG00001'
   },
 
   {
-  user:             practitioner2_user,
-  first_name:       'lee',
-  last_name:        'keng',
-  gender:            Gender.find(2),
+  user:             User.find(5),
+  first_name:       'Donald',
+  last_name:        'Blake',
+  gender:            Gender.find(1),
   region:            Region.find(4),
-  specialty:         Specialty.find(1)   
+  specialty:         Specialty.find(1),
+  registration_number: 'MEDREG00002'
+  },
+
+  {
+  user:             User.find(6),
+  first_name:       'Bruce',
+  last_name:        'Banner',
+  gender:            Gender.find(1),
+  region:            Region.find(4),
+  specialty:         Specialty.find(3),  
+  registration_number: 'MEDREG00003'
+  },
+
+  {
+  user:             User.find(7),
+  first_name:       'Reed',
+  last_name:        'Richards',
+  gender:            Gender.find(1),
+  region:            Region.find(3),
+  specialty:         Specialty.find(4), 
+  registration_number: 'MEDREG00003'
   }
 ])
 
 Quote.create([
     {
-        practitioner:      practitioner_user,
-        quote_cost:        2000 ,
-        listing:           Listing.find(4),
-        comments:          "Mou Duk Gou ",
+        practitioner:      User.find(5),
+        quote_cost:        1000 ,
+        listing:           Listing.find(1),
+        comments:          "Its fine, surgery would include ...Nisi cillum et ex tempor proident.",
         payment_status:    'Paid'
     },
 
         {
-        practitioner:      practitioner2_user,
-        quote_cost:        3000 ,
-        listing:           Listing.find(3),
-        comments:          "Mou Duk Gou ",
+        practitioner:      User.find(5),
+        quote_cost:        2000 ,
+        listing:           Listing.find(2),
+        comments:          "Its fine, surgery would include ...Nisi cillum et ex tempor proident",
         payment_status:    'Pending'
     },
 
         {
-        practitioner:      practitioner2_user,
+        practitioner:      User.find(1),
         quote_cost:        4000 ,
-        listing:           Listing.find(2),
-        comments:          "Mou Duk Gou ",
+        listing:           Listing.find(3),
+        comments:          "Incididunt non consequat laborum incididunt excepteur sit ad. Non adipisicing quis cupidatat veniam ad eiusmod exercitation deserunt nulla id sit. Excepteur aute ad aute cillum magna cillum laborum reprehenderit. Aliquip laboris officia incididunt ipsum id velit magna                        occaecat ea dolore. Aute sit adipisicing ut quis aliqua nostrud duis nulla do sint. Excepteur enim dolor reprehenderit Lorem fugiat dolor consectetur excepteur sint culpa proident.",
         payment_status:    'Paid'
     },
 
     {
-        practitioner:      practitioner_user,
+        practitioner:      User.find(5),
         quote_cost:        5000 ,
-        listing:           Listing.find(1),
-        comments:          "Mou Duk Gou ",
+        listing:           Listing.find(4),
+        comments:          "Real bad",
         payment_status:    'Paid'
     },
 
     {
-        practitioner:      practitioner2_user,
+        practitioner:      User.find(6),
         quote_cost:        9000 ,
-        listing:           Listing.find(1),
-        comments:          "Mou Duk Gou ",
+        listing:           Listing.find(5),
+        comments:          "Uncurable but i can try",
         payment_status:    'Pending'
     }
 
