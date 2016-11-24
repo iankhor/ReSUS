@@ -31,15 +31,22 @@
                 <% when 1 %> 
                 <% patient = PatientProfile.find_by(user_id: current_user.id) %>
                 
-                <!--display only when page is dashboard-->
+                  <% if not patient.nil?%>
+                  <!--display only when page is dashboard-->
                   <li><a href= <%= edit_patient_profile_path(patient) %>  data-target="#theModal" data-toggle="modal">Profile</a></li>
+                  <% end %>
                   <li class="divider"></li>
 
-                <li><a href= <%= new_listing_path(patient) %>  data-target="#theModal" data-toggle="modal">Place listing</a></li>
+
+
+                  <li><a href= <%= new_listing_path(patient) %>  data-target="#theModal" data-toggle="modal">Place listing</a></li>
 
                 <% when 2 %> 
                 <% practitioner = PractitionerProfile.find_by(user_id: current_user.id) %>
+
+                <% if not practitioner.nil?%>
                 <li><a href= <%= edit_practitioner_profile_path(practitioner)  %>  data-target="#theModal" data-toggle="modal">Profile</a></li>
+                <% end %>
                 <li class="divider"></li>
                 <li><a href="#">Place quote</a></li>
                 <% end %>
