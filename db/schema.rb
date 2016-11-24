@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122075519) do
+ActiveRecord::Schema.define(version: 20161123235308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 20161122075519) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "experiments", force: :cascade do |t|
-    t.integer  "blood_type_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["blood_type_id"], name: "index_experiments_on_blood_type_id", using: :btree
   end
 
   create_table "genders", force: :cascade do |t|
@@ -123,13 +116,6 @@ ActiveRecord::Schema.define(version: 20161122075519) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "medcondition_specialty_relationships", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "specialty_id"
-    t.integer  "condition_id"
-  end
-
   create_table "medical_condition_specialties", force: :cascade do |t|
   end
 
@@ -137,13 +123,6 @@ ActiveRecord::Schema.define(version: 20161122075519) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "medical_conditions_specialties", force: :cascade do |t|
-    t.integer "medical_condition_id"
-    t.integer "specialty_id"
-    t.index ["medical_condition_id"], name: "index_medical_conditions_specialties_on_medical_condition_id", using: :btree
-    t.index ["specialty_id"], name: "index_medical_conditions_specialties_on_specialty_id", using: :btree
   end
 
   create_table "patient_profiles", force: :cascade do |t|
@@ -206,6 +185,13 @@ ActiveRecord::Schema.define(version: 20161122075519) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "seeks", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "specialty_id"
+    t.integer  "medical_condition_id"
+  end
+
   create_table "specialties", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -236,7 +222,6 @@ ActiveRecord::Schema.define(version: 20161122075519) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "experiments", "blood_types"
   add_foreign_key "listings", "medical_conditions"
   add_foreign_key "listings", "users", column: "patient_id"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"

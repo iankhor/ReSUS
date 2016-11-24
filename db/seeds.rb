@@ -37,6 +37,34 @@ Specialty.create([
     {   name: 'Rheumatologyy'}
 ])
 
+specialty_1 = Specialty.find(1)
+specialty_2 = Specialty.find(2)
+specialty_3 = Specialty.find(3)
+
+condition_1 = MedicalCondition.find(1)
+condition_2 = MedicalCondition.find(2)
+condition_3 = MedicalCondition.find(3)
+condition_4 = MedicalCondition.find(4)
+condition_5 = MedicalCondition.find(5)
+condition_6 = MedicalCondition.find(6)
+condition_7 = MedicalCondition.find(7)
+condition_8 = MedicalCondition.find(8)
+
+# Cardiothoracic
+specialty_1.seeks.create(medical_condition: condition_1)
+specialty_1.seeks.create(medical_condition: condition_2)
+specialty_1.seeks.create(medical_condition: condition_3)
+
+# Orthopedics
+specialty_2.seeks.create(medical_condition: condition_4)
+specialty_2.seeks.create(medical_condition: condition_5)
+specialty_2.seeks.create(medical_condition: condition_6)
+
+# Rheumatologyy
+specialty_3.seeks.create(medical_condition: condition_7)
+specialty_3.seeks.create(medical_condition: condition_8)
+
+
 MaritalStatus.create([
     { name: 'Single' },
     { name: 'Married' },

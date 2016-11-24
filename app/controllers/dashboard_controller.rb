@@ -8,7 +8,9 @@ class DashboardController < ApplicationController
              @dashboard = Listing.where(patient: current_user)
             
         when 2
-            @dashboard = Quote.where(practitioner: current_user)
+            specialty = PractitionerProfile.find_by()
+             @dashboard = Listing.where(patient: current_user)
+            # @dashboard = Quote.where(practitioner: current_user)
         end
         # @dashboard = Quote.all
     end

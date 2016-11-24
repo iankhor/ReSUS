@@ -1,3 +1,5 @@
 class Specialty < ApplicationRecord
-    has_many :medical_conditions
+    has_many :seeks
+    has_many :medical_conditions,  through: :seeks
+
 end
