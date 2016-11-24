@@ -17,6 +17,12 @@ border: 1px solid slategrey;
     font-size: 5em;
 }
 
+.dashboard-header {
+    color: #EE2A80;
+    font-weight: bold;
+    font-size :15px;
+}
+
 .navbar-default .nav > li > a {
 color: black
     
