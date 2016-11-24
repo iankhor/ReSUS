@@ -6,6 +6,9 @@ end
 def create
   # Amount in cents
   @amount = params[:amount]
+  @quote = params[:quote_id]
+
+  Quote.find_by(id: @quote).payment_status = 'Paid'
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],

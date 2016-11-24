@@ -43,7 +43,9 @@
     </label>
   </article>
 
+<!--to pass params to charges controller-->
   <%= hidden_field_tag(:amount , @quote.quote_cost) %>
+  <%= hidden_field_tag(:quote_id , @quote.id) %>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

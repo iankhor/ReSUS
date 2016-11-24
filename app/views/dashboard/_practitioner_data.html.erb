@@ -11,7 +11,7 @@
     <% if quote.nil? %> 
         <td> <%= "Pending" %> </td>
         <% button_text_quote = 'Quote' %>
-        <td><%= button_to button_text_quote , new_quote_path, class: 'btn btn-default'  %> </td>  
+        <td><%= link_to button_text_quote , new_quote_path(listing: listing), class: 'btn btn-default'  %> </td>  
     <% else %>
         <td> <%= quote.quote_cost %> </td>
         <% button_text_quote = 'Update' %>
