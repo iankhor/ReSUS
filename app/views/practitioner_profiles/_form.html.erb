@@ -3,18 +3,16 @@
 
 
   <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :registration_number %>
-    <%= f.association :specialty, collection: Specialty.all, value_method: :id %>
-    <%= f.association :gender, collection: Gender.all, value_method: :id %>
-    <%= f.association :region, collection: Region.all, value_method: :id %>
+    <%= f.input :first_name, input_html: {class: "form-control"} %>
+    <%= f.input :last_name, input_html: {class: "form-control"} %>
+    <%= f.input :registration_number, input_html: {class: "form-control"} %>
+    <%= f.association :specialty, collection: Specialty.all, value_method: :id , input_html: {class: "form-control"}%>
+    <%= f.association :gender, collection: Gender.all, value_method: :id , input_html: {class: "form-control"}%>
+    <%= f.association :region, collection: Region.all, value_method: :id , input_html: {class: "form-control"}%>
     <%= image_tag practitioner_profile.photo_url%>
     <p>Upload photo</p>
-    <%= f.input :photo, as: :file%>
-  </div>
+    <%= f.input :photo, as: :file, input_html: {class: "form-control"} , label: "Upload photo"%>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <%= f.button :submit ,  class:  "btn btn-lg btn-primary btn-block"%>
+
 <% end %>
