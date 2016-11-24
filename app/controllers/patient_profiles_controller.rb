@@ -29,7 +29,7 @@ class PatientProfilesController < ApplicationController
   def create
     @patient_profile = PatientProfile.new(patient_profile_params)
     @patient_profile.user_id = current_user.id
-
+    
     respond_to do |format|
       if @patient_profile.save
         format.html { redirect_to @patient_profile, notice: 'Patient profile was successfully created.' }
@@ -73,7 +73,7 @@ class PatientProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_profile_params
-      params.require(:patient_profile).permit(:user_id, 
+       params.require(:patient_profile).permit(:user_id, 
                                               :first_name, 
                                               :last_name, 
                                               :gender_id, 

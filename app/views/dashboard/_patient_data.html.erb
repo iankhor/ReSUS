@@ -3,19 +3,19 @@
     <% quote = Quote.find_by(listing_id: listing.id) %>
 
 <tr>
-    <td> <%= index + 1 %> </td>
-    <td> <%= 1 %> </td>
-
+    <td> <%= index + 1 %> </td> 
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
-    <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
-    <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
 
     <% if quote.nil? %> 
-        <td> <%= "Pending" %> </td>
+        <td> <%= 'Pending' %> </td>
+        <td> <%= 'Pending' %> </td>
         <% button_text_quote = 'Pending' %>
         <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-default'  %> </td>  
          <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
     <% else %>
+        <td> <%= PractitionerProfile.find_by(user_id: quote.practitioner.id).first_name.humanize +  ' ' + 
+                 PractitionerProfile.find_by(user_id: quote.practitioner.id).last_name.humanize %> 
+        </td>
         <td> <%= quote.quote_cost %> </td>
         <% button_text_quote = 'Review' %>
         <td><%= link_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
