@@ -1,18 +1,10 @@
 <%= simple_form_for(@quote) do |f| %>
   <%= f.error_notification %>
+  <!--<#%= f.association :listing, collection: Listing.all, value_method: :id, input_html: {class: "form-control"} %>-->
+    <%= f.input :quote_cost, input_html: {class: "form-control"} %>
+    <%= f.input :comments, input_html: {class: "form-control"} %>
+    <%= f.input :payment_status, input_html: {class: "form-control"} %>
+    <br/>
+    <%= f.button :submit , class:  "btn btn-lg btn-primary btn-block" %>
 
-  <%= f.association :listing, collection: Listing.all, value_method: :id %>
-
-  <div class="form-inputs">
-    <%= f.input :quote_cost %>
-    <%= f.input :comments %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :payment_status %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
