@@ -7,12 +7,19 @@
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> <%= quote.quote_cost %> </td>
 
-    <% button_text_quote = 'Update' %>
-    <% button_text_quote = 'Quote' if quote.quote_cost.nil? || quote.quote_cost == 0  %>
+    <% if quote.nil? %> 
+        <td> <%= "Pending" %> </td>
+        <% button_text_quote = 'Quote' %>
+        <td><%= button_to button_text_quote , new_quote_path, class: 'btn btn-default'  %> </td>  
+    <% else %>
+        <td> <%= quote.quote_cost %> </td>
+        <% button_text_quote = 'Update' %>
+        <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+    <% end %>
 
-    <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
-    <td><%= button_to 'See listing', listing_path(id: quote.id), method: :get , class: 'btn btn-default'%> </td>
+
+
+    <td><%= button_to 'See listing', listing_path(id: listing), method: :get , class: 'btn btn-default'%> </td>
 </tr>
 <% end%>

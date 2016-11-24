@@ -1,6 +1,8 @@
 <%= simple_form_for(@quote) do |f| %>
   <%= f.error_notification %>
 
+  <%= f.association :listing, collection: Listing.all, value_method: :id %>
+
   <div class="form-inputs">
     <%= f.input :quote_cost %>
     <%= f.input :comments %>

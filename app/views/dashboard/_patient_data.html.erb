@@ -9,18 +9,17 @@
     <td> <%= MedicalCondition.find_by(id: listing.medical_condition.id).name %> </td>
     <td> <%= current_patient.first_name.humanize + ' ' + current_patient.last_name.humanize %></td>
     <td> <%= Gender.find_by(id: current_patient.gender.id).name %></td>
-    <td> <%= quote.quote_cost %> </td>
-    <!--<td> <#%= quote.payment_status %> </td>-->
 
-    <!--<#% if quote.payment_status == 'Paid' %>
-        <#% button_text_quote = 'Paid' %>
-        <td><div class='btn btn-default'> PAID </div> </td>  
+    <% if quote.nil? %> 
+        <td> <%= "Pending" %> </td>
+        <% button_text_quote = 'Pending' %>
+        <td><%= link_to button_text_quote , dashboard_index_path , class: 'btn btn-default'  %> </td>  
+    <% else %>
+        <td> <%= quote.quote_cost %> </td>
+        <% button_text_quote = 'Update' %>
+        <td><%= button_to button_text_quote , edit_quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
+    <% end %>
 
-    <#% else %>
-        <#% button_text_quote = 'Review quote' %>
-        <td><#%= button_to button_text_quote , quote_path(id: quote), method: :get, class: 'btn btn-default'  %> </td>  
-
-    <#% end %>-->
 
     <td><%= button_to 'Update', edit_listing_path(id: listing.id), method: :get , class: 'btn btn-default'%> </td>
 </tr>
