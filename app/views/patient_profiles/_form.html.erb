@@ -11,80 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= current_user.id %>
-  </div>
+    <%= f.input :first_name , input_html: {class: "form-control"} %>
+    <%= f.input :last_name , input_html: {class: "form-control"} %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
     <%= f.label :gender_id %>
     <%= f.collection_select(:gender_id, Gender.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.gender_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
-    <%= f.input :date_of_birth %>
-  </div>
+    <%= f.input :date_of_birth , input_html: {class: "form-control"} %>
 
-  <div class="field">
     <%= f.label :region_id %>
     <%= f.collection_select(:region_id, Region.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.region_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
     <%= f.label :ethnicity_id %>
     <%= f.collection_select(:ethnicity_id, Ethnicity.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.ethnicity_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
     <%= f.label :blood_type_id %>
     <%= f.collection_select(:blood_type_id, BloodType.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.blood_type_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
     <%= f.label :marital_status_id %>
     <%= f.collection_select(:marital_status_id, MaritalStatus.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.marital_status_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
     <%= f.label :allergy_id %>
     <%= f.collection_select(:allergy_id, Allergy.all, :id, :name, { :prompt => 'Select one', :selected => @patient_profile.allergy_id }, { class: 'form-control' }) %>
-  </div>
 
-  <div class="field">
-    <%= f.label :height %>
-    <%= f.number_field :height %>
-  </div>
+    <%= f.input :height , input_html: {class: "form-control"} %>
 
-  <div class="field">
-    <%= f.label :weight %>
-    <%= f.number_field :weight %>
-  </div>
+    <%= f.input :weight , input_html: {class: "form-control"} %>
 
-  <div class="field">
-    <%= f.label :contact_number %>
-    <%= f.number_field :contact_number %>
-  </div>
+    <%= f.input :contact_number , input_html: {class: "form-control"} %>
 
-  <div class="form-inputs">
-      <%= image_tag patient_profile.photo_url%>
-  </div>
+    <%= image_tag patient_profile.photo_url%>
 
-  <div class="form-inputs">
-    <p>Upload photo</p>
-    <%= f.input :photo, as: :file%>
-  </div>
+    <%= f.input :photo, as: :file , input_html: {class: "form-control"} , label: "Upload photo"%>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <br/>
+     <%= f.button :submit , class:  "btn btn-lg btn-primary btn-block" %>
 <% end %>
