@@ -19,21 +19,21 @@ Link : [http://shrouded-spire-66335.herokuapp.com](http://shrouded-spire-66335.h
 
 ---
 ## 2. Requirements / comments
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)1. Create your application using Ruby on Rails     
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)2. Demonstrate knowledge of Rails conventions.  
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)3. Use postgresql database in development.  
-![alt text](http://findicons.com/icon/download/118036/cross/16/png?id=330641)4. Use an API (eg. Omniauth, Geocoding, Maps, other..). `(to be implemented)`  
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)5. Use appropriate gems.  
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)6. Use environmental variables to protect API keys etc. `(set in heroku)`  
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)7. Implement a payment system for your product. `(Stripe used)`  
-![alt text](http://findicons.com/icon/download/118036/cross/16/png?id=330641)8. Your app must send transactional emails (eg. using Mailgun).`(to be implemented)`    
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)9. Your app should have an internal user messaging system. `(Mailboxer)`   
-![alt text](http://findicons.com/icon/download/118036/cross/16/png?id=330641)10. Your app will have some type of searching, sorting and or filtering capability.    
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)11. Your app will have some type of file uploading capability (eg. images). `(Cloudinary)`  
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)12. Your app will have authentication (eg. Devise, must have full functionality in place).  
-![alt text](http://findicons.com/icon/download/118036/cross/16/png?id=330641)13. Your app will have authorisation (users have restrictions on what they can see and edit). `(to be implemented)`    
-![alt text](http://findicons.com/icon/download/118036/cross/16/png?id=330641)16. Your app will have an admin dashboard for the admin user to administrate the site. `(not needed at this stage)`   
-![alt text](http://findicons.com/icon/download/159408/tick/16/png?id=280825)17. Document your application with a README that explains how to setup, configure and use your application.  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)1. Create your application using Ruby on Rails     
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)2. Demonstrate knowledge of Rails conventions.  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)3. Use postgresql database in development.  
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)4. Use an API (eg. Omniauth, Geocoding, Maps, other..). `(to be implemented)`  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)5. Use appropriate gems.  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)6. Use environmental variables to protect API keys etc. `(set in heroku)`  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)7. Implement a payment system for your product. `(Stripe used)`  
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)8. Your app must send transactional emails (eg. using Mailgun).`(to be implemented)`    
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)9. Your app should have an internal user messaging system. `(Mailboxer)`   
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)10. Your app will have some type of searching, sorting and or filtering capability.    
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)11. Your app will have some type of file uploading capability (eg. images). `(Cloudinary)`  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)12. Your app will have authentication (eg. Devise, must have full functionality in place).  
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)13. Your app will have authorisation (users have restrictions on what they can see and edit). `(to be implemented)`    
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)16. Your app will have an admin dashboard for the admin user to administrate the site. `(not needed at this stage)`   
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)17. Document your application with a README that explains how to setup, configure and use your application.  
 
 
 ---
