@@ -1,24 +1,27 @@
-# README
+# Overview
+1. App brief and deployed webpage
+2. Requirements
+3. User stories
+4. Wireframing
+5. DB Scehma
+6. Tools used
+7. Coding and current bugs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## 1. App brief
 
-* Ruby version
+## 2. Requirements
 
-* System dependencies
+## 3. User stories
 
-* Configuration
+## 4. Wireframing
 
-* Database creation
+## 5. DB Schema
 
-* Database initialization
 
-* How to run the test suite
+## 6. Tools used
 
-* Services (job queues, cache servers, search engines, etc.)
+## 7. Coding and current bugs
 
-* Deployment instructions
 
-* ...
+
