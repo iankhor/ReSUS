@@ -31,7 +31,7 @@ Link : [http://shrouded-spire-66335.herokuapp.com](http://shrouded-spire-66335.h
 ![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)10. Your app will have some type of searching, sorting and or filtering capability.    
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)11. Your app will have some type of file uploading capability (eg. images). `(Cloudinary)`  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)12. Your app will have authentication (eg. Devise, must have full functionality in place).  
-![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)13. Your app will have authorisation (users have restrictions on what they can see and edit). `(to be implemented)`    
+![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)13. Your app will have authorisation (users have restrictions on what they can see and edit). `(partially implemented, patients can only edit listings, practitioners can only edit quotes)`    
 ![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)16. Your app will have an admin dashboard for the admin user to administrate the site. `(not needed at this stage)`   
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)17. Document your application with a README that explains how to setup, configure and use your application.  
 
@@ -70,16 +70,17 @@ Trello was used as a project planning too and also to keep track of ongoing chan
 ---
 ## 8. Coding ,current bugs, and future updates
 
-* Coding
-Reviews??
+* Coding  
+  1.Reviews??
 
-* Bugs
+* Bugs  
+  1.TBA
 
-* Future updates
-  1. Question bank depending on medical condition selecting in listing 
+* Future updates  
+  1.Question bank depending on medical condition selecting in listing  
+  2.TBA 
 
 ---
 ## 9. Other challenges
 
-
-asd
+TBA
