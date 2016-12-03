@@ -1,12 +1,11 @@
 # Overview
-1. App brief and deployed webpage
+1. App brief for ReSUS
 2. Requirements
 3. Wireframing & workflow diagram
 4. User stories
 5. Entity relationship diagram / DB Schema
-6. Tools used
+6. Current bugs, future updates and others.
 7. Coding and current bugs
-8. Other challenges
 
 ---
 ## 1. App brief for ReSUS
@@ -18,7 +17,7 @@ ReSUS also aims to lower the barriers of entry for healthcare - affordable healt
 Link : [http://shrouded-spire-66335.herokuapp.com](http://shrouded-spire-66335.herokuapp.com)
 
 ---
-## 2. Requirements / comments
+## 2. Requirements
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)1. Create your application using Ruby on Rails     
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)2. Demonstrate knowledge of Rails conventions.  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)3. Use postgresql database in development.  
