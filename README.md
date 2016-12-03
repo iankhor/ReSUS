@@ -45,7 +45,27 @@ Axure was used to draw the following wireframe and workflow
 ---
 
 ## 4. User stories
-TBA
+
+* Patients  
+ 1.As a patient, I am able to sign up and enter basic details : Name, Age, Address, Country, Ethiticity  
+ 2.As a patient, I am able to sign in with my email and password  
+ 3.As a patient, I am able to select from a list of non critical medical condition  
+ 4.As a patient, I am able to upload a current set of medical data such as ECG, XRay etc based on a medical condition  
+ 5.As a patient, I would be able to receive itemised quotes from medical practioners  
+ 6.As a patient, I would be able to perform a simple background check of the medical practioners from their local medical database  
+ 7.As a patient, I would be able to accept a quote  
+ 8.As a patient, I would be able to write a review or provide a rating once I have accepted the quote and received treatment  
+ 9.As a patient, I am able to send a message to medical practioners who have sent me a quote  
+
+* Practitioners  
+ 1.As a medical practioner, I am able to sign up with my name, years of experience, accreditation board, medical registration, specialty, contact details, number of treated cases to date.  
+ 2.As a medical practioner, I am able to sign in with my username and password.  
+ 3.As a medical practioner, I am able to view patients based on my selected specialty  
+ 4.As a medical practioner, I have the option to provide a non-commital prediagnosis based on the initial patient information  
+ 5.As a medical practioner, I am able to provide a itemised quote.  
+ 6.As a medical practioner, I am able to send a quote to a patient.  
+ 7.As a medical practioner, I am able send a message to the patient whom I have sent the quote.  
+
 
 ---
 ## 5. Entity relationship diagram / DB Schema
@@ -68,19 +88,28 @@ Trello was used as a project planning too and also to keep track of ongoing chan
 
 
 ---
-## 8. Coding ,current bugs, and future updates
+## 8. Current bugs, future updates and others.
 
 * Coding  
-  1.Reviews??
+  1.To be conducted.
+
+* User stories & Schema review
+  1.User stories - Sharon Chen suggested that i reword user stories to in the format of 
+  "As a [user], I can ... , so ..."  
+  2.Schema - Sharon Chen suggesed to simplify the profiles table of patients and practitioners as some fields were identical  
+  3.Schema - Patrick suggested to add blood type for patient profiles  
+  4.Schema - Ruegen advised that the other tables should be reference by the 'User' table where relevant.
+  Initial design had multiple dependancies to query a field. All tables ideally should live indepedantly with only 1 depandancy on the 'User' table
 
 * Bugs  
-  1.TBA
+  1.On the navigation bar, after clicking on droplist item, droplist does not function anymore. Workaround was to refresh page.
+  2.On heroku, appearnace of elements does not seem to be responsive. To review.
+  3.Validation to be applied on user profile input on sign up.
+
 
 * Future updates  
-  1.Question bank depending on medical condition selecting in listing  
-  2.TBA 
+  1.Requirements that were not implemented
+  2.Question bank depending on medical condition selecting in listing  
+  3.[placeholder] 
 
 ---
-## 9. Other challenges
-
-TBA
