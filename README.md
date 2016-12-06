@@ -21,7 +21,7 @@ Link : [http://shrouded-spire-66335.herokuapp.com](http://shrouded-spire-66335.h
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)1. Create your application using Ruby on Rails     
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)2. Demonstrate knowledge of Rails conventions.  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)3. Use postgresql database in development.  
-![alt text](http://findicons.com/files/icons/1156/fugue/16/cross.png)4. Use an API (eg. Omniauth, Geocoding, Maps, other..). `(to be implemented)`  
+![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)4. Use an API (eg. Omniauth, Geocoding, Maps, other..). `(Stripe)`  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)5. Use appropriate gems.  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)6. Use environmental variables to protect API keys etc. `(set in heroku)`  
 ![alt text](http://findicons.com/files/icons/1581/silk/16/tick.png)7. Implement a payment system for your product. `(Stripe used)`  
